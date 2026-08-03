@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Academic Research — Ben Westlund</title>
+<meta name="description" content="Papers and publications on opioid harm reduction, implementation science, and provider health." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<style>
+  .papers{max-width:1160px;margin:0 auto;padding:1rem 2.75rem 2rem;}
+  .paper{
+    background:var(--white);border:1px solid var(--line);border-radius:10px;
+    padding:2.2rem 2.2rem;margin-bottom:1.4rem;
+    display:grid;grid-template-columns:auto 1fr;gap:2rem;
+    transition:border-color .18s,transform .18s;
+  }
+  .paper:hover{border-color:var(--cobalt);transform:translateY(-2px);}
+  .paper-idx{font-family:var(--mono);font-size:0.75rem;color:var(--line);padding-top:0.4rem;}
+
+  .status{
+    display:inline-flex;align-items:center;gap:0.45rem;
+    font-family:var(--mono);font-size:0.68rem;letter-spacing:0.03em;
+    padding:0.35rem 0.7rem;border-radius:3px;margin-bottom:1rem;
+  }
+  .status::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;}
+  .s-live{background:var(--cobalt-soft);color:var(--cobalt);}
+  .s-draft{background:#F1F0EC;color:var(--slate);}
+  .s-accept{background:var(--coral-soft);color:var(--coral);}
+
+  .paper h3{font-family:var(--display);font-size:1.22rem;font-weight:600;line-height:1.35;margin-bottom:0.8rem;letter-spacing:-0.01em;}
+  .role{font-family:var(--mono);font-size:0.7rem;color:var(--slate);margin-bottom:1rem;}
+  .role b{color:var(--navy);}
+  .paper p.abs{font-size:0.93rem;line-height:1.72;color:var(--slate);margin-bottom:1.1rem;max-width:660px;}
+  .meta-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.1rem;}
+  .mtag{font-family:var(--mono);font-size:0.68rem;background:#F1F0EC;color:var(--slate);padding:0.32rem 0.62rem;border-radius:3px;}
+  .doi{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    font-family:var(--mono);font-size:0.74rem;color:var(--cobalt);
+    text-decoration:none;border-bottom:1px solid var(--cobalt-soft);padding-bottom:2px;
+  }
+  .doi:hover{border-color:var(--cobalt);}
+  .ux-note{
+    margin-top:1.2rem;padding:0.95rem 1.1rem;border-left:2px solid var(--coral);
+    background:var(--coral-soft);border-radius:0 5px 5px 0;
+  }
+  .ux-note span{font-family:var(--mono);font-size:0.66rem;color:var(--coral);display:block;margin-bottom:0.35rem;}
+  .ux-note p{font-size:0.87rem;line-height:1.65;color:var(--navy);}
+
+  .thesis{
+    max-width:1160px;margin:0 auto;padding:0 2.75rem 4rem;
+  }
+  .thesis-card{
+    background:var(--navy);color:var(--white);border-radius:10px;padding:2.4rem 2.2rem;
+  }
+  .thesis-card .status{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);}
+  .thesis-card h3{font-family:var(--display);font-size:1.18rem;font-weight:600;margin-bottom:0.7rem;}
+  .thesis-card p{font-size:0.92rem;line-height:1.7;color:rgba(255,255,255,0.75);max-width:660px;}
+  .thesis-card .role{color:rgba(255,255,255,0.55);}
+  .thesis-card .role b{color:var(--white);}
+
+  @media(max-width:820px){
+    .papers,.thesis{padding-left:1.4rem;padding-right:1.4rem;}
+    .paper{grid-template-columns:1fr;gap:0;padding:1.6rem 1.4rem;}
+    .paper-idx{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-mark" href="index.html"><span class="nav-dot"></span><span class="nav-name">Ben Westlund</span></a>
+  <ul class="nav-links">
+    <li><a href="work.html">UX Work</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="mailto:benwestlund@med.unc.edu" class="cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-head">
+  <span class="eyebrow">4 active projects &middot; 2026</span>
+  <h1>Academic research</h1>
+  <p class="lede">Qualitative and mixed-methods work on <strong>opioid harm reduction</strong>, <strong>implementation science</strong>, and <strong>provider health</strong> — conducted at UNC Gillings with Dr. Vivian Go. Several of these projects are where my interest in human-centered design started.</p>
+</div>
+
+<div class="papers">
+
+  <!-- 01 -->
+  <article class="paper" data-reveal>
+    <span class="paper-idx">01</span>
+    <div>
+      <span class="status s-live">Pre-published &middot; preprint live</span>
+      <h3>Emergency preparedness planning: lessons from COVID-19 and the opioid crisis in rural Ohio</h3>
+      <p class="role"><b>First author</b> &middot; Westlund BR, Sibley AL, Colston DC, Devadas J, Enderle MN, Piscalko HM, Miller WC, Go VF</p>
+      <p class="abs">The COVID-19 pandemic amplified an already severe overdose crisis, but its effect on rural emergency preparedness was largely undocumented. Drawing on 52 semi-structured interviews with people who use drugs and local stakeholders across two Appalachian Ohio counties, this study found that existing preparedness plans were outdated, unfamiliar to staff, and built for short-term disasters rather than sustained public health emergencies — with almost no consideration of the needs of people who use drugs. Service disruptions, inconsistent communication, and heightened stigma compounded the harm, though communities responded with peer distribution networks and rapid telehealth adoption.</p>
+      <div class="meta-row">
+        <span class="mtag">52 interviews</span>
+        <span class="mtag">Thematic analysis</span>
+        <span class="mtag">Dedoose</span>
+        <span class="mtag">Triple/double-coded</span>
+        <span class="mtag">NIH Rural Opioid Initiative</span>
+      </div>
+      <a class="doi" href="https://doi.org/10.64898/2026.07.30.26359388" target="_blank" rel="noopener">DOI: 10.64898/2026.07.30.26359388 ↗</a>
+      <div class="ux-note">
+        <span>// WHY THIS MATTERS FOR DESIGN</span>
+        <p>The central finding is a design failure: plans existed, but the people meant to use them couldn't find them, didn't recognize them, and weren't represented in them. Systems fail the same way products do — when they're built without the end user in the room.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 02 -->
+  <article class="paper" data-reveal>
+    <span class="paper-idx">02</span>
+    <div>
+      <span class="status s-accept">Accepted for presentation &middot; SIRC 2026</span>
+      <h3>When is the juice worth the squeeze? Costs versus benefits of implementation strategy tracking</h3>
+      <p class="role"><b>First author</b> &middot; Westlund B, Powell B, Dang HLT, Cao TVA, Nguyen HN, Nguyen KN, Sripaipan T, Rossi SL, Miller WC, Go VF, Bartels SM</p>
+      <p class="abs">Tracking how implementation strategies actually get used ranges from coding every meeting recording to a retrospective skim of program reports — with wildly different costs. A structured literature review plus a recorded, facilitated researcher debate surfaced three core tensions: rigor vs. feasibility, prospective vs. retrospective documentation, and researcher- vs. implementer-led tracking. Effort ranged from under 15 minutes per log entry to more than 11,000 person-hours across a multi-year study. The result is a practical decision framework for choosing tracking intensity based on setting, resource capacity, study design, and purpose.</p>
+      <div class="meta-row">
+        <span class="mtag">Structured literature review</span>
+        <span class="mtag">Facilitated debate method</span>
+        <span class="mtag">Consensus building</span>
+        <span class="mtag">Decision framework</span>
+      </div>
+      <div class="ux-note">
+        <span>// WHY THIS MATTERS FOR DESIGN</span>
+        <p>This is fundamentally a research-ops question — how much measurement is worth its cost — and the output is a decision tool, not a finding. Knowing when <em>not</em> to over-instrument is as useful in a product org as it is in an implementation trial.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 03 -->
+  <article class="paper" data-reveal>
+    <span class="paper-idx">03</span>
+    <div>
+      <span class="status s-draft">In draft &middot; manuscript in preparation</span>
+      <h3>Healthcare providers' own use in Vietnam: A socioecological analysis of motivations, barriers, and facilitators to drinking</h3>
+      <p class="role"><b>First author</b> &middot; Secondary qualitative analysis, EBAI trial</p>
+      <p class="abs">Healthcare providers are expected to counsel patients on alcohol use, yet their own drinking is rarely studied — despite evidence that it shapes how willing they are to intervene. Analyzing 16 post-training interviews from ART clinics across three regions of Vietnam through the socioecological model, this study found that barriers to reducing drinking were almost never individual. Providers rarely described craving or dependence; instead they described social obligation, workplace hierarchy, and the real cost of refusing a superior's invitation. Where leadership set a non-drinking norm, reduction became far easier to sustain.</p>
+      <div class="meta-row">
+        <span class="mtag">16 in-depth interviews</span>
+        <span class="mtag">Framework Method</span>
+        <span class="mtag">NVivo 14</span>
+        <span class="mtag">Socioecological model</span>
+        <span class="mtag">25% double-coded</span>
+      </div>
+      <div class="ux-note">
+        <span>// WHY THIS MATTERS FOR DESIGN</span>
+        <p>A textbook case of why you don't design for stated individual intent. Every provider said reducing was up to them; the data said it was governed by hierarchy and social cost. The intervention target moves from the person to the environment.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 04 -->
+  <article class="paper" data-reveal>
+    <span class="paper-idx">04</span>
+    <div>
+      <span class="status s-draft">In progress &middot; scoping review</span>
+      <h3>Human-Centered Design × Implementation Science: a scoping review</h3>
+      <p class="role"><b>Supporting author</b></p>
+      <p class="abs">A scoping review mapping where human-centered design and implementation science actually meet — how HCD methods are being used within implementation research, where the two fields borrow from each other, and where the integration is more claimed than practiced.</p>
+      <div class="meta-row">
+        <span class="mtag">Scoping review</span>
+        <span class="mtag">HCD</span>
+        <span class="mtag">Implementation science</span>
+      </div>
+      <div class="ux-note">
+        <span>// WHY THIS MATTERS FOR DESIGN</span>
+        <p>This is the paper that sits closest to the center of the Venn diagram — it's literally about the seam between design practice and research rigor, which is the same seam I work in.</p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="thesis" data-reveal>
+  <div class="thesis-card">
+    <span class="status">Earlier work &middot; 2022</span>
+    <h3>The intersection of the opioid crisis and the COVID-19 pandemic</h3>
+    <p class="role"><b>Senior honors thesis</b> &middot; Wake Forest University &middot; Co-PI with Dr. A. Brewer</p>
+    <p>An independent qualitative study on how the pandemic reshaped pathways into and out of opioid use disorder — in-depth interviews, thematic analysis, and theory-driven interpretation. Awarded the Wake Forest Faculty-Student Facilitation Fund Grant; graduated with Honors and Distinction in Sociology.</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 BEN WESTLUND — CHAPEL HILL, NC</p>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="work.html">UX Work</a>
+    <a href="cv.html">CV</a>
+    <a href="mailto:benwestlund@med.unc.edu">Email</a>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:0.08});
+document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
