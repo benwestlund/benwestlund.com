@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CV — Ben Westlund</title>
+<meta name="description" content="Curriculum vitae: Benjamin R. Westlund, UX researcher and PhD student in Health Behavior at UNC Gillings." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<style>
+  .cv-actions{max-width:1160px;margin:0 auto;padding:0 2.75rem 3rem;display:flex;gap:0.9rem;flex-wrap:wrap;}
+
+  .cv-body{max-width:1160px;margin:0 auto;padding:0 2.75rem 4rem;}
+  .cv-block{
+    border-top:1px solid var(--line);padding:2.5rem 0;
+    display:grid;grid-template-columns:200px 1fr;gap:3rem;
+  }
+  .cv-block > h2{
+    font-family:var(--mono);font-size:0.72rem;color:var(--cobalt);
+    letter-spacing:0.04em;font-weight:500;padding-top:0.3rem;
+  }
+  .entry{margin-bottom:2rem;max-width:720px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-top{display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;flex-wrap:wrap;margin-bottom:0.2rem;}
+  .entry h3{font-family:var(--display);font-size:1.02rem;font-weight:600;letter-spacing:-0.01em;}
+  .entry .when{font-family:var(--mono);font-size:0.7rem;color:var(--slate);white-space:nowrap;}
+  .entry .where{font-size:0.9rem;color:var(--navy);margin-bottom:0.5rem;}
+  .entry p{font-size:0.9rem;line-height:1.7;color:var(--slate);}
+  .entry .honors{
+    font-family:var(--mono);font-size:0.68rem;color:var(--cobalt);
+    background:var(--cobalt-soft);display:inline-block;padding:0.25rem 0.55rem;border-radius:3px;margin-top:0.5rem;
+  }
+
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;max-width:720px;}
+  .skill-set h4{font-family:var(--mono);font-size:0.68rem;color:var(--cobalt);margin-bottom:0.7rem;}
+  .skill-set p{font-size:0.88rem;line-height:1.75;color:var(--slate);}
+
+  .pub{
+    padding:1.3rem 0;border-bottom:1px solid var(--line);max-width:760px;
+  }
+  .pub:first-child{padding-top:0;}
+  .pub:last-child{border-bottom:none;}
+  .pub .pstat{
+    font-family:var(--mono);font-size:0.66rem;padding:0.25rem 0.55rem;border-radius:3px;
+    display:inline-block;margin-bottom:0.55rem;
+  }
+  .p-live{background:var(--cobalt-soft);color:var(--cobalt);}
+  .p-draft{background:#F1F0EC;color:var(--slate);}
+  .p-accept{background:var(--coral-soft);color:var(--coral);}
+  .pub h3{font-family:var(--display);font-size:0.98rem;font-weight:600;line-height:1.45;margin-bottom:0.4rem;}
+  .pub .authors{font-size:0.84rem;color:var(--slate);line-height:1.6;}
+  .pub a{font-family:var(--mono);font-size:0.72rem;color:var(--cobalt);text-decoration:none;display:inline-block;margin-top:0.5rem;}
+  .pub a:hover{text-decoration:underline;}
+
+  .contact-lines{max-width:720px;}
+  .cline{display:flex;gap:1.2rem;padding:0.75rem 0;border-bottom:1px solid var(--line);font-size:0.9rem;}
+  .cline:last-child{border-bottom:none;}
+  .cline dt{font-family:var(--mono);font-size:0.68rem;color:var(--cobalt);min-width:110px;padding-top:0.15rem;}
+  .cline dd{color:var(--navy);}
+  .cline a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line);}
+  .cline a:hover{border-color:var(--cobalt);}
+
+  @media(max-width:820px){
+    .cv-actions,.cv-body{padding-left:1.4rem;padding-right:1.4rem;}
+    .cv-block{grid-template-columns:1fr;gap:1.2rem;}
+    .skills-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-mark" href="index.html"><span class="nav-dot"></span><span class="nav-name">Ben Westlund</span></a>
+  <ul class="nav-links">
+    <li><a href="work.html">UX Work</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="cv.html" class="active">CV</a></li>
+    <li><a href="mailto:benwestlund@med.unc.edu" class="cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-head">
+  <span class="eyebrow">updated August 2026</span>
+  <h1>Curriculum vitae</h1>
+  <p class="lede">Benjamin R. Westlund — PhD student in Health Behavior at UNC Gillings, with applied experience in human-centered design, qualitative research, and community health programs.</p>
+</div>
+
+<div class="cv-actions">
+  <a class="btn btn-primary" href="Westlund_Ben_CV.pdf" download>↓ Download PDF</a>
+  <a class="btn btn-ghost" href="mailto:benwestlund@med.unc.edu">Email me</a>
+</div>
+
+<div class="cv-body">
+
+  <!-- EDUCATION -->
+  <section class="cv-block" data-reveal>
+    <h2>// EDUCATION</h2>
+    <div>
+      <div class="entry">
+        <div class="entry-top"><h3>PhD, Health Behavior</h3><span class="when">2024 — expected 2029</span></div>
+        <p class="where">UNC Gillings School of Global Public Health</p>
+        <p>Faculty advisor: Dr. Vivian Go</p>
+        <span class="honors">Dorothy Dunn Scholar</span>
+      </div>
+      <div class="entry">
+        <div class="entry-top"><h3>MSPH, Health Behavior</h3><span class="when">expected May 2026</span></div>
+        <p class="where">UNC Gillings School of Global Public Health</p>
+        <span class="honors">Dorothy Dunn Scholar</span>
+      </div>
+      <div class="entry">
+        <div class="entry-top"><h3>B.A., Sociology</h3><span class="when">2018 — 2022</span></div>
+        <p class="where">Wake Forest University</p>
+        <p>Major: Sociology, Social Determinants of Health and Well-being · Minor equivalent: Health and Exercise Science</p>
+        <span class="honors">Cum Laude · Honors &amp; Distinction in Sociology</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="cv-block" data-reveal>
+    <h2>// RESEARCH &amp; DESIGN EXPERIENCE</h2>
+    <div>
+      <div class="entry">
+        <div class="entry-top"><h3>Graduate Research Assistant</h3><span class="when">Aug 2024 — present</span></div>
+        <p class="where">Department of Health Behavior, UNC Gillings</p>
+        <p>Rural opioid harm-reduction research (OHOP), provider alcohol use in Vietnam, implementation strategy tracking, and emergency preparedness planning. Qualitative coding and analysis in NVivo and Dedoose, survey instrument development, theory-driven memo writing, and mixed-methods integration.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-top"><h3>Human-Centered Design Lead — TABLE</h3><span class="when">2025</span></div>
+        <p class="where">TABLE, Orange County NC (semester engagement)</p>
+        <p>Led a full HCD cycle with a local food-security nonprofit: designed and facilitated listening sessions and card sorts with 17 participants, built empathy maps and insight statements, ran co-ideation workshops, and prioritized concepts with a value/effort matrix. Presented three validated concepts and an assumption-testing plan to TABLE leadership.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-top"><h3>Research &amp; Program Support Specialist</h3><span class="when">Aug 2022 — Jul 2024</span></div>
+        <p class="where">NC Formerly Incarcerated Transition Program (NC FIT), UNC Family Medicine</p>
+        <p>Supported clinical reentry navigation for formerly incarcerated individuals through care coordination, data tracking, and Medicaid suspension/reactivation. Contributed to program evaluation, qualitative interviews, county stakeholder communication, and strategic partnership development.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-top"><h3>Senior Honors Thesis Researcher</h3><span class="when">Aug 2021 — May 2022</span></div>
+        <p class="where">Wake Forest University</p>
+        <p>Designed and led an independent qualitative study on the intersection of COVID-19 and opioid use disorder. Conducted interviews, completed thematic analysis, and authored a grant-winning thesis.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-top"><h3>Research Assistant</h3><span class="when">May — Aug 2021</span></div>
+        <p class="where">Center for Health Policy and Inequalities Research (CHPIR)</p>
+        <p>HRV intervention research, literature reviews, qualitative memo development, and data management.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-top"><h3>Teaching Assistant</h3><span class="when">Aug — Dec 2021</span></div>
+        <p class="where">Wake Forest University — Undergraduate Sociology</p>
+        <p>Supported course design, graded writing assignments, and led mini lectures for an undergraduate sociology seminar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="cv-block" data-reveal>
+    <h2>// SKILLS &amp; METHODS</h2>
+    <div class="skills-grid">
+      <div class="skill-set">
+        <h4>UX &amp; DESIGN RESEARCH</h4>
+        <p>Human-centered design facilitation · Listening sessions · Card sorting · Empathy mapping · Insight synthesis · How-Might-We framing · Co-ideation workshops · Value/effort prioritization · Storyboarding · Assumption testing · Miro</p>
+      </div>
+      <div class="skill-set">
+        <h4>QUALITATIVE</h4>
+        <p>Thematic analysis · Grounded theory · Framework Method · Codebook development · Intercoder reliability · Memo writing · NVivo · Dedoose</p>
+      </div>
+      <div class="skill-set">
+        <h4>QUANTITATIVE &amp; MIXED</h4>
+        <p>Survey design · Data management · Stata · Joint displays · Mixed-methods integration · Hybrid designs</p>
+      </div>
+      <div class="skill-set">
+        <h4>IMPLEMENTATION SCIENCE</h4>
+        <p>CFIR · ERIC · Barrier/strategy matrices · Implementation strategy tracking · Hybrid effectiveness-implementation designs</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="cv-block" data-reveal>
+    <h2>// PUBLICATIONS</h2>
+    <div>
+      <div class="pub">
+        <span class="pstat p-live">Pre-published</span>
+        <h3>Emergency preparedness planning: lessons from COVID-19 and the opioid crisis in rural Ohio</h3>
+        <p class="authors">Westlund BR, Sibley AL, Colston DC, Devadas J, Enderle MN, Piscalko HM, Miller WC, Go VF</p>
+        <a href="https://doi.org/10.64898/2026.07.30.26359388" target="_blank" rel="noopener">DOI: 10.64898/2026.07.30.26359388 ↗</a>
+      </div>
+      <div class="pub">
+        <span class="pstat p-accept">Accepted — SIRC 2026</span>
+        <h3>When is the juice worth the squeeze? Costs versus benefits of implementation strategy tracking</h3>
+        <p class="authors">Westlund B, Powell B, Dang HLT, Cao TVA, Nguyen HN, Nguyen KN, Sripaipan T, Rossi SL, Miller WC, Go VF, Bartels SM</p>
+      </div>
+      <div class="pub">
+        <span class="pstat p-draft">In draft</span>
+        <h3>Healthcare providers' own use in Vietnam: A socioecological analysis of motivations, barriers, and facilitators to drinking</h3>
+        <p class="authors">Westlund B, et al. · Manuscript in preparation</p>
+      </div>
+      <div class="pub">
+        <span class="pstat p-draft">In progress</span>
+        <h3>Human-Centered Design × Implementation Science: a scoping review</h3>
+        <p class="authors">Supporting author · In progress</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="cv-block" data-reveal>
+    <h2>// AWARDS &amp; GRANTS</h2>
+    <div>
+      <div class="entry">
+        <div class="entry-top"><h3>Dorothy Dunn Scholarship</h3><span class="when">2024</span></div>
+        <p class="where">UNC Gillings School of Global Public Health</p>
+      </div>
+      <div class="entry">
+        <div class="entry-top"><h3>Faculty-Student Facilitation Fund Grant</h3><span class="when">2022</span></div>
+        <p class="where">Wake Forest University</p>
+        <p>Westlund B &amp; Brewer A (advisor). <em>The Intersection of the Opioid Crisis and the COVID-19 Pandemic.</em> $200, funded.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFFILIATIONS -->
+  <section class="cv-block" data-reveal>
+    <h2>// AFFILIATIONS</h2>
+    <div>
+      <div class="entry">
+        <p>American Public Health Association (APHA) — Early Career Professional</p>
+        <p>North Carolina Public Health Association</p>
+        <p>Society for Implementation Research Collaboration (SIRC) — 2026 presenter</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="cv-block" data-reveal>
+    <h2>// CONTACT</h2>
+    <dl class="contact-lines">
+      <div class="cline"><dt>EMAIL</dt><dd><a href="mailto:benwestlund@med.unc.edu">benwestlund@med.unc.edu</a></dd></div>
+      <div class="cline"><dt>INSTITUTION</dt><dd>UNC Gillings School of Global Public Health, Department of Health Behavior</dd></div>
+      <div class="cline"><dt>LOCATION</dt><dd>170 Rosenau Hall, Chapel Hill, NC 27599</dd></div>
+    </dl>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 BEN WESTLUND — CHAPEL HILL, NC</p>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="work.html">UX Work</a>
+    <a href="research.html">Research</a>
+    <a href="mailto:benwestlund@med.unc.edu">Email</a>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:0.06});
+document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
