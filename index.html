@@ -118,6 +118,38 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
   .nav-links a:not(.cta){display:none;}
 }
 
+  /* CONTACT DROPDOWN */
+  .contact-wrap{position:relative;}
+  .contact-trigger{
+    font-family:var(--mono);font-size:0.72rem;color:var(--white);
+    background:var(--navy);border:none;padding:0.5rem 0.95rem;border-radius:3px;
+    cursor:pointer;transition:background .15s;
+  }
+  .contact-trigger:hover{background:var(--cobalt);}
+  .contact-menu{
+    position:absolute;top:100%;right:0;padding-top:0.6rem;
+    opacity:0;pointer-events:none;transform:translateY(-6px);
+    transition:opacity .16s ease,transform .16s ease;z-index:200;
+  }
+  .contact-wrap:hover .contact-menu,
+  .contact-wrap.open .contact-menu{opacity:1;pointer-events:auto;transform:translateY(0);}
+  .contact-menu-inner{
+    background:var(--white);border:1px solid var(--line);border-radius:8px;
+    padding:0.4rem;min-width:230px;box-shadow:0 18px 40px -14px rgba(18,23,43,0.35);
+  }
+  .contact-item{
+    display:flex;align-items:center;gap:0.65rem;
+    font-family:var(--mono);font-size:0.76rem;color:var(--navy);
+    text-decoration:none;padding:0.65rem 0.75rem;border-radius:5px;
+    transition:background .12s,color .12s;
+  }
+  .contact-item:hover{background:var(--cobalt-soft);color:var(--cobalt);}
+  .c-ic{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:20px;height:20px;border-radius:4px;background:var(--paper);
+    font-size:0.68rem;flex-shrink:0;
+  }
+
 </style>
 <style>
   /* HERO */
@@ -263,7 +295,19 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
     <li><a href="work.html">UX Work</a></li>
     <li><a href="research.html">Research</a></li>
     <li><a href="cv.html">CV</a></li>
-    <li><a href="mailto:benwestlund@med.unc.edu" class="cta">Contact</a></li>
+    <li class="contact-wrap">
+      <button class="cta contact-trigger" type="button" aria-haspopup="true" aria-expanded="false">Contact ▾</button>
+      <div class="contact-menu">
+        <div class="contact-menu-inner">
+          <a class="contact-item" href="mailto:benwestlund@med.unc.edu">
+            <span class="c-ic">✉</span> benwestlund@med.unc.edu
+          </a>
+          <a class="contact-item" href="https://www.linkedin.com/in/benwestlund" target="_blank" rel="noopener">
+            <span class="c-ic">in</span> LinkedIn
+          </a>
+        </div>
+      </div>
+    </li>
   </ul>
 </nav>
 
@@ -297,21 +341,21 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
       <div class="lobe left" id="lobeL">
         <h4>Research Rigor</h4>
         <ul>
-          <li>Grounded theory</li>
-          <li>Thematic saturation</li>
-          <li>Codebook development</li>
-          <li>Intercoder reliability</li>
-          <li>Purposive sampling</li>
+          <li>Study design &amp; sampling</li>
+          <li>Semi-structured interviewing</li>
+          <li>Thematic analysis &amp; coding</li>
+          <li>Mixed-methods integration</li>
+          <li>Survey design &amp; quant analysis</li>
         </ul>
       </div>
       <div class="lobe right" id="lobeR">
         <h4>Design Craft</h4>
         <ul>
-          <li>Empathy mapping</li>
-          <li>How-Might-We framing</li>
-          <li>Rapid prototyping</li>
-          <li>Value / effort matrices</li>
-          <li>Storyboarding</li>
+          <li>Discovery research</li>
+          <li>Journey &amp; empathy mapping</li>
+          <li>Insight synthesis</li>
+          <li>Usability testing</li>
+          <li>Wireframing &amp; prototyping</li>
         </ul>
       </div>
       <div class="puck center" id="puck" tabindex="0" role="slider"
@@ -416,8 +460,8 @@ document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
 
   const COPY = {
     center:{k:'// THE OVERLAP',t:'<b>Rigor makes design defensible; craft makes research usable.</b> A codebook keeps me honest about what participants actually said — an empathy map turns that into something a team can build from. Same evidence, two jobs.'},
-    left:{k:'// RESEARCH RIGOR',t:'<b>The part most UX teams never get trained in.</b> Purposive sampling, double-coding for intercoder reliability, and checking for thematic saturation before claiming a finding. On the rural Ohio study that meant 52 interviews, three coders, and a codebook we revised until we agreed.'},
-    right:{k:'// DESIGN CRAFT',t:'<b>The part that makes findings move.</b> Empathy maps, How-Might-We reframing, value/effort prioritization, and storyboards. With TABLE this turned two listening sessions into three concepts leadership could actually weigh and act on.'}
+    left:{k:'// RESEARCH RIGOR',t:'<b>The part most UX teams never get trained in.</b> Purposive sampling, semi-structured interviewing, and knowing when qualitative findings need a quantitative check — not just running a survey, but integrating it into one coherent story. On the rural Ohio study that meant 52 interviews, three coders, and a codebook we revised until we agreed.'},
+    right:{k:'// DESIGN CRAFT',t:'<b>The part that makes findings move.</b> Discovery sessions, empathy maps, synthesized insight statements, and low-fidelity wireframes that make an idea testable. With TABLE this turned two listening sessions into three concepts leadership could actually weigh and act on.'}
   };
 
   function render(){
@@ -490,6 +534,24 @@ document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
   });
 
   render();
+})();
+
+/* contact dropdown: hover on desktop, tap-toggle on touch */
+(function(){
+  document.querySelectorAll('.contact-wrap').forEach(function(wrap){
+    const trigger = wrap.querySelector('.contact-trigger');
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      const isOpen = wrap.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', isOpen);
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.contact-wrap.open').forEach(function(w){
+      w.classList.remove('open');
+      w.querySelector('.contact-trigger').setAttribute('aria-expanded','false');
+    });
+  });
 })();
 </script>
 </body>
