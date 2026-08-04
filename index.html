@@ -176,6 +176,9 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
   .photo-tag b{color:var(--coral);}
 
   /* ===== INTERACTIVE VENN ===== */
+  .venn-intro{max-width:900px;margin:0 auto;text-align:center;}
+  .venn-intro .sec-label{justify-content:center;}
+  .venn-intro h2{margin:0 auto;max-width:720px;}
   .venn-stage{
     position:relative;width:100%;max-width:900px;margin:2.5rem auto 0;
     background:var(--white);border:1px solid var(--line);border-radius:12px;
@@ -190,6 +193,13 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
     background:var(--cobalt-soft);color:var(--cobalt);border-radius:3px;
     padding:0.2rem 0.45rem;font-family:var(--mono);font-size:0.7rem;
   }
+  .hint-arrows{display:inline-flex;align-items:center;gap:0.3rem;color:var(--cobalt);}
+  .hint-arrows span{display:inline-block;animation:nudgeArrow 1.6s ease-in-out infinite;}
+  .hint-arrows span:first-child{animation-delay:0s;}
+  .hint-arrows span:last-child{animation-delay:.2s;transform:scaleX(-1);}
+  @keyframes nudgeArrow{0%,100%{opacity:0.3;transform:translateX(0);}50%{opacity:1;transform:translateX(-3px);}}
+  .hint-arrows span:last-child{animation-name:nudgeArrowR;}
+  @keyframes nudgeArrowR{0%,100%{opacity:0.3;transform:translateX(0) scaleX(-1);}50%{opacity:1;transform:translateX(3px) scaleX(-1);}}
   .venn-board{position:relative;height:330px;touch-action:none;}
   .lobe{
     position:absolute;top:50%;transform:translateY(-50%);
@@ -221,6 +231,17 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
     cursor:grab;user-select:none;touch-action:none;
     transform:translate(-50%,-50%);
     transition:box-shadow .2s,background .25s;
+  }
+  .puck::before{
+    content:'';position:absolute;inset:-8px;border-radius:50%;
+    border:1.5px solid var(--cobalt);opacity:0;
+    animation:pulseRing 2.6s ease-out infinite;
+  }
+  .puck.dragging::before,.puck:active::before{display:none;}
+  @keyframes pulseRing{
+    0%{transform:scale(0.94);opacity:0.55;}
+    75%{transform:scale(1.22);opacity:0;}
+    100%{transform:scale(1.22);opacity:0;}
   }
   .puck:active,.puck.dragging{cursor:grabbing;box-shadow:0 24px 48px -12px rgba(18,23,43,0.65);}
   .puck small{font-family:var(--mono);font-size:0.6rem;font-weight:400;opacity:0.6;margin-top:0.3rem;display:block;}
@@ -356,11 +377,13 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
 
 <!-- INTERACTIVE VENN -->
 <div class="sec sec-top" data-reveal>
-  <span class="sec-label">// 01 — how I work</span>
-  <h2>UX and academic research usually live in separate portfolios. Here's what it looks like when they don't.</h2>
+  <div class="venn-intro">
+    <span class="sec-label">// 01 — how I work</span>
+    <h2>UX and academic research usually live in separate portfolios. Here's what it looks like when they don't.</h2>
+  </div>
 
   <div class="venn-stage">
-    <p class="venn-hint">Slide <kbd>UX Research</kbd> aside to uncover each toolkit — release to return to the overlap</p>
+    <p class="venn-hint"><span class="hint-arrows"><span>‹</span><span>›</span></span> Slide <kbd>UX Research</kbd> aside to uncover each toolkit — release to return to the overlap</p>
     <div class="venn-board" id="board">
       <div class="lobe left" id="lobeL">
         <h4>Research Rigor</h4>
@@ -564,6 +587,42 @@ document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
   });
 
   render();
+
+  /* one-time auto demo nudge when the diagram first scrolls into view,
+     so visitors who don't think to drag still see it move */
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let hasNudged = false;
+  function autoNudge(){
+    if(hasNudged || prefersReducedMotion || dragging) return;
+    hasNudged = true;
+    const seq = [
+      {to:-70, t:420}, {to:70, t:640}, {to:0, t:420}
+    ];
+    let i = 0;
+    function step(){
+      if(i >= seq.length) return;
+      const target = seq[i].to, dur = seq[i].t, from = x, t0 = performance.now();
+      i++;
+      (function anim(now){
+        if(dragging) return; // person grabbed it mid-demo, back off immediately
+        const p = Math.min((now-t0)/dur,1);
+        const e = p<0.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2; // ease in-out
+        x = from + (target-from)*e;
+        render();
+        if(p < 1) requestAnimationFrame(anim);
+        else step();
+      })(t0);
+    }
+    step();
+  }
+  const nudgeObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting) autoNudge(); });
+  }, {threshold:0.6});
+  nudgeObserver.observe(board);
+
+  /* if the person actually grabs the puck, cancel any future auto-nudge */
+  puck.addEventListener('mousedown', ()=>{ hasNudged = true; });
+  puck.addEventListener('touchstart', ()=>{ hasNudged = true; });
 })();
 
 /* contact dropdown: hover on desktop, tap-toggle on touch */
