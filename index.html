@@ -241,17 +241,39 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
   /* PATHS */
   .paths{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;}
   .path-card{
-    position:relative;overflow:hidden;background:var(--navy);color:var(--white);
-    border-radius:10px;padding:2.6rem 2.2rem;text-decoration:none;transition:transform .2s ease;
+    position:relative;overflow:hidden;
+    background:linear-gradient(135deg,#1C2444 0%,#12172B 100%);color:var(--white);
+    border-radius:10px;padding:2.6rem 2.2rem;text-decoration:none;
+    transition:transform .22s ease,box-shadow .22s ease;
     display:flex;flex-direction:column;justify-content:space-between;min-height:260px;
+    box-shadow:0 14px 30px -18px rgba(18,23,43,0.5);
   }
-  .path-card:hover{transform:translateY(-4px);}
-  .path-card.alt{background:var(--white);color:var(--navy);border:1px solid var(--line);}
-  .path-tag{font-family:var(--mono);font-size:0.7rem;opacity:0.65;margin-bottom:1.2rem;display:block;}
-  .path-card h3{font-family:var(--display);font-size:1.5rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:0.8rem;}
-  .path-card p{font-size:0.9rem;line-height:1.65;opacity:0.8;max-width:360px;}
-  .path-arrow{margin-top:1.8rem;display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.78rem;}
-  .path-card:hover .path-arrow{gap:0.75rem;transition:gap .18s;}
+  .path-card:hover{transform:translateY(-5px);box-shadow:0 22px 44px -16px rgba(51,85,255,0.35);}
+  .path-card.alt{background:linear-gradient(135deg,#FFFFFF 0%,#FBF9F6 100%);color:var(--navy);border:1px solid var(--line);box-shadow:0 14px 30px -20px rgba(18,23,43,0.14);}
+  .path-card.alt:hover{box-shadow:0 22px 44px -16px rgba(255,107,74,0.28);}
+  .path-watermark{
+    position:absolute;right:-0.3rem;bottom:-2.6rem;
+    font-family:var(--display);font-weight:700;font-size:10rem;line-height:1;
+    color:rgba(255,255,255,0.045);pointer-events:none;user-select:none;
+  }
+  .path-card.alt .path-watermark{color:rgba(255,107,74,0.07);}
+  .path-tag{
+    font-family:var(--mono);font-size:0.68rem;letter-spacing:0.03em;
+    display:inline-block;margin-bottom:1.3rem;padding:0.32rem 0.7rem;
+    border-radius:20px;background:rgba(255,255,255,0.09);
+  }
+  .path-card.alt .path-tag{background:var(--coral-soft);color:var(--coral);}
+  .path-card h3{font-family:var(--display);font-size:1.5rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:0.8rem;position:relative;z-index:1;}
+  .path-card p{font-size:0.9rem;line-height:1.65;opacity:0.85;max-width:360px;position:relative;z-index:1;}
+  .path-arrow{
+    margin-top:1.8rem;display:inline-flex;align-items:center;gap:0.5rem;
+    font-family:var(--mono);font-size:0.78rem;width:fit-content;position:relative;z-index:1;
+    padding:0.6rem 1rem;border-radius:20px;border:1px solid rgba(255,255,255,0.22);
+    transition:gap .18s,background .18s,border-color .18s;
+  }
+  .path-card.alt .path-arrow{border-color:rgba(255,107,74,0.35);color:var(--coral);}
+  .path-card:hover .path-arrow{gap:0.8rem;background:rgba(51,85,255,0.22);border-color:var(--cobalt);}
+  .path-card.alt:hover .path-arrow{background:var(--coral-soft);border-color:var(--coral);}
 
   /* TOOLKIT */
   .toolkit-grid{display:flex;flex-wrap:wrap;gap:0.65rem;margin-top:2.2rem;}
@@ -387,6 +409,7 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
   <h2>Two bodies of work, one way of thinking.</h2>
   <div class="paths">
     <a class="path-card" href="work.html">
+      <span class="path-watermark">01</span>
       <div>
         <span class="path-tag">01 / UX RESEARCH &amp; DESIGN</span>
         <h3>Case studies: TABLE &amp; EchoCare</h3>
@@ -395,12 +418,13 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
       <span class="path-arrow">See the work →</span>
     </a>
     <a class="path-card alt" href="research.html">
+      <span class="path-watermark">02</span>
       <div>
-        <span class="path-tag" style="color:var(--coral);">02 / ACADEMIC RESEARCH</span>
+        <span class="path-tag">02 / ACADEMIC RESEARCH</span>
         <h3>Papers &amp; publications</h3>
         <p>Four active projects spanning opioid harm reduction, implementation science, and provider health — including a scoping review at the intersection of HCD and implementation science.</p>
       </div>
-      <span class="path-arrow" style="color:var(--coral);">Read the research →</span>
+      <span class="path-arrow">Read the research →</span>
     </a>
   </div>
 </div>
