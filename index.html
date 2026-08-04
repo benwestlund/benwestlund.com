@@ -52,8 +52,8 @@ nav{
 .nav-name{font-family:var(--display);font-weight:600;font-size:0.98rem;letter-spacing:-0.01em;}
 .nav-links{display:flex;align-items:center;gap:2.1rem;list-style:none;}
 .nav-links a{
-  font-family:var(--mono);font-size:0.72rem;text-decoration:none;color:var(--slate);
-  padding:0.3rem 0;border-bottom:1px solid transparent;transition:color .15s,border-color .15s;
+  font-family:var(--mono);font-size:0.86rem;font-weight:500;text-decoration:none;color:var(--slate);
+  padding:0.4rem 0.15rem;border-bottom:1.5px solid transparent;transition:color .15s,border-color .15s;
 }
 .nav-links a:hover,.nav-links a.active{color:var(--navy);border-color:var(--cobalt);}
 .nav-links a.cta{color:var(--white);background:var(--navy);padding:0.5rem 0.95rem;border-radius:3px;border:none;}
@@ -121,34 +121,36 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
   /* CONTACT DROPDOWN */
   .contact-wrap{position:relative;}
   .contact-trigger{
-    font-family:var(--mono);font-size:0.72rem;color:var(--white);
-    background:var(--navy);border:none;padding:0.5rem 0.95rem;border-radius:3px;
-    cursor:pointer;transition:background .15s;
+    font-family:var(--mono);font-weight:600;font-size:0.86rem;color:var(--white);
+    background:var(--navy);border:none;padding:0.75rem 1.35rem;border-radius:5px;
+    cursor:pointer;transition:background .15s,transform .15s;letter-spacing:0.01em;
   }
-  .contact-trigger:hover{background:var(--cobalt);}
+  .contact-trigger:hover{background:var(--cobalt);transform:translateY(-1px);}
   .contact-menu{
-    position:absolute;top:100%;right:0;padding-top:0.6rem;
+    position:absolute;top:100%;right:0;padding-top:0.7rem;
     opacity:0;pointer-events:none;transform:translateY(-6px);
     transition:opacity .16s ease,transform .16s ease;z-index:200;
   }
   .contact-wrap:hover .contact-menu,
   .contact-wrap.open .contact-menu{opacity:1;pointer-events:auto;transform:translateY(0);}
   .contact-menu-inner{
-    background:var(--white);border:1px solid var(--line);border-radius:8px;
-    padding:0.4rem;min-width:230px;box-shadow:0 18px 40px -14px rgba(18,23,43,0.35);
+    background:var(--white);border:1px solid var(--line);border-radius:10px;
+    padding:0.55rem;min-width:220px;box-shadow:0 20px 44px -14px rgba(18,23,43,0.38);
   }
   .contact-item{
-    display:flex;align-items:center;gap:0.65rem;
-    font-family:var(--mono);font-size:0.76rem;color:var(--navy);
-    text-decoration:none;padding:0.65rem 0.75rem;border-radius:5px;
+    display:flex;align-items:center;gap:0.9rem;
+    font-family:var(--body);font-weight:500;font-size:0.94rem;color:var(--navy);
+    text-decoration:none;padding:0.85rem 0.9rem;border-radius:7px;
     transition:background .12s,color .12s;
   }
   .contact-item:hover{background:var(--cobalt-soft);color:var(--cobalt);}
   .c-ic{
     display:inline-flex;align-items:center;justify-content:center;
-    width:20px;height:20px;border-radius:4px;background:var(--paper);
-    font-size:0.68rem;flex-shrink:0;
+    width:32px;height:32px;border-radius:7px;flex-shrink:0;
+    font-size:0.95rem;color:var(--white);
   }
+  .c-ic.mail{background:var(--cobalt);}
+  .c-ic.li{background:#0A66C2;font-family:var(--display);font-weight:700;font-size:0.82rem;}
 
 </style>
 <style>
@@ -300,10 +302,10 @@ footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
       <div class="contact-menu">
         <div class="contact-menu-inner">
           <a class="contact-item" href="mailto:benwestlund@med.unc.edu">
-            <span class="c-ic">✉</span> benwestlund@med.unc.edu
+            <span class="c-ic mail">&#9993;</span> Email
           </a>
           <a class="contact-item" href="https://www.linkedin.com/in/benwestlund" target="_blank" rel="noopener">
-            <span class="c-ic">in</span> LinkedIn
+            <span class="c-ic li">in</span> LinkedIn
           </a>
         </div>
       </div>
