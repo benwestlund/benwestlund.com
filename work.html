@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UX Work — Ben Westlund</title>
+<meta name="description" content="UX research and human-centered design case studies: TABLE volunteer experience and EchoCare digital health concept." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* ============================================
+   Ben Westlund — shared styles
+   ============================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#12172B;
+  --navy-2:#1B2140;
+  --paper:#F7F6F3;
+  --white:#FFFFFF;
+  --cobalt:#3355FF;
+  --cobalt-soft:#E7ECFF;
+  --coral:#FF6B4A;
+  --coral-soft:#FFEAE3;
+  --slate:#6B7086;
+  --line:#E4E3DE;
+  --display:'Space Grotesk',sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);color:var(--navy);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;}
+img{max-width:100%;display:block;}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 2.75rem;
+  background:rgba(247,246,243,0.88);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav-mark{display:flex;align-items:center;gap:0.55rem;text-decoration:none;}
+.nav-dot{width:9px;height:9px;border-radius:2px;background:var(--cobalt);transform:rotate(45deg);flex-shrink:0;}
+.nav-name{font-family:var(--display);font-weight:600;font-size:0.98rem;letter-spacing:-0.01em;}
+.nav-links{display:flex;align-items:center;gap:2.1rem;list-style:none;}
+.nav-links a{
+  font-family:var(--mono);font-size:0.72rem;text-decoration:none;color:var(--slate);
+  padding:0.3rem 0;border-bottom:1px solid transparent;transition:color .15s,border-color .15s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);border-color:var(--cobalt);}
+.nav-links a.cta{color:var(--white);background:var(--navy);padding:0.5rem 0.95rem;border-radius:3px;border:none;}
+.nav-links a.cta:hover{background:var(--cobalt);}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.85rem 1.5rem;border-radius:4px;
+  font-family:var(--body);font-weight:600;font-size:0.87rem;
+  text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s;
+  border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--navy);color:var(--white);}
+.btn-primary:hover{background:var(--cobalt);transform:translateY(-2px);box-shadow:0 8px 20px rgba(51,85,255,0.28);}
+.btn-ghost{border-color:var(--line);color:var(--navy);background:var(--white);}
+.btn-ghost:hover{border-color:var(--navy);transform:translateY(-2px);}
+
+/* SHELL */
+.sec{max-width:1160px;margin:0 auto;padding:5.5rem 2.75rem;}
+.sec-top{border-top:1px solid var(--line);}
+.sec-label{font-family:var(--mono);font-size:0.72rem;color:var(--cobalt);letter-spacing:0.04em;margin-bottom:0.9rem;display:block;}
+.sec h2{font-family:var(--display);font-size:clamp(1.7rem,3vw,2.15rem);font-weight:600;letter-spacing:-0.02em;max-width:660px;}
+.sec .lede{color:var(--slate);font-size:1rem;line-height:1.75;max-width:620px;margin-top:1.1rem;}
+
+/* PAGE HEADER */
+.page-head{max-width:1160px;margin:0 auto;padding:9rem 2.75rem 3rem;}
+.page-head h1{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(2.3rem,4.6vw,3.5rem);line-height:1.06;letter-spacing:-0.03em;
+  margin-bottom:1.3rem;max-width:800px;
+}
+.page-head .lede{color:var(--slate);font-size:1.08rem;line-height:1.75;max-width:640px;}
+.page-head .lede strong{color:var(--navy);font-weight:600;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-family:var(--mono);font-size:0.74rem;color:var(--cobalt);
+  background:var(--cobalt-soft);padding:0.4rem 0.75rem;border-radius:3px;margin-bottom:1.6rem;
+}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cobalt);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+
+/* FOOTER */
+footer{
+  max-width:1160px;margin:0 auto;padding:3rem 2.75rem 4rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
+.foot-links{display:flex;gap:1.4rem;}
+.foot-links a{font-family:var(--mono);font-size:0.72rem;color:var(--slate);text-decoration:none;}
+.foot-links a:hover{color:var(--cobalt);}
+
+/* REVEAL */
+[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+[data-reveal].in{opacity:1;transform:translateY(0);}
+
+@media(max-width:820px){
+  nav{padding:1rem 1.4rem;}
+  .sec,.page-head,footer{padding-left:1.4rem;padding-right:1.4rem;}
+  .page-head{padding-top:7.5rem;}
+  .nav-links{gap:1rem;}
+  .nav-links a:not(.cta){display:none;}
+}
+
+</style>
+<style>
+  /* jump nav */
+  .jump{max-width:1160px;margin:0 auto;padding:0 2.75rem 3rem;display:flex;gap:0.7rem;flex-wrap:wrap;}
+  .jump a{
+    font-family:var(--mono);font-size:0.74rem;text-decoration:none;
+    border:1px solid var(--line);background:var(--white);color:var(--navy);
+    padding:0.55rem 1rem;border-radius:20px;transition:border-color .15s,transform .15s;
+  }
+  .jump a:hover{border-color:var(--cobalt);color:var(--cobalt);transform:translateY(-2px);}
+
+  /* case study shell */
+  .case{max-width:1160px;margin:0 auto;padding:4.5rem 2.75rem;border-top:1px solid var(--line);}
+  .case-head{display:grid;grid-template-columns:1fr 300px;gap:3rem;margin-bottom:3rem;align-items:start;}
+  .case-num{font-family:var(--mono);font-size:0.72rem;color:var(--cobalt);margin-bottom:0.9rem;display:block;}
+  .case h2{font-family:var(--display);font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:600;letter-spacing:-0.025em;line-height:1.1;margin-bottom:1rem;}
+  .case .sub{font-size:1.02rem;color:var(--slate);line-height:1.7;max-width:560px;}
+  .facts{border-left:1px solid var(--line);padding-left:1.8rem;}
+  .fact{margin-bottom:1.3rem;}
+  .fact:last-child{margin-bottom:0;}
+  .fact dt{font-family:var(--mono);font-size:0.65rem;color:var(--cobalt);margin-bottom:0.3rem;}
+  .fact dd{font-size:0.86rem;color:var(--navy);line-height:1.55;}
+
+  /* HMW callout */
+  .hmw{
+    background:var(--navy);color:var(--white);border-radius:10px;
+    padding:2.2rem 2.4rem;margin:2.5rem 0;
+  }
+  .hmw span{font-family:var(--mono);font-size:0.68rem;color:var(--coral);display:block;margin-bottom:0.8rem;}
+  .hmw p{font-family:var(--display);font-size:clamp(1.05rem,2vw,1.35rem);font-weight:500;line-height:1.45;}
+  .hmw p.rev{font-size:0.95rem;font-weight:400;color:rgba(255,255,255,0.7);margin-top:1.2rem;font-family:var(--body);line-height:1.65;}
+
+  /* phase blocks */
+  .phase{margin-top:3.5rem;}
+  .phase-label{
+    display:inline-flex;align-items:center;gap:0.6rem;
+    font-family:var(--mono);font-size:0.7rem;color:var(--cobalt);
+    background:var(--cobalt-soft);padding:0.35rem 0.75rem;border-radius:3px;margin-bottom:1.1rem;
+  }
+  .phase h3{font-family:var(--display);font-size:1.3rem;font-weight:600;letter-spacing:-0.015em;margin-bottom:0.9rem;}
+  .phase p{font-size:0.95rem;line-height:1.75;color:var(--slate);max-width:680px;margin-bottom:1rem;}
+  .phase p strong{color:var(--navy);font-weight:600;}
+  .phase ul{list-style:none;margin:1.2rem 0;max-width:680px;}
+  .phase ul li{
+    font-size:0.92rem;line-height:1.7;color:var(--slate);
+    padding-left:1.3rem;position:relative;margin-bottom:0.55rem;
+  }
+  .phase ul li::before{content:'';position:absolute;left:0;top:0.62rem;width:5px;height:5px;border-radius:50%;background:var(--cobalt);}
+  .phase ul li b{color:var(--navy);font-weight:600;}
+
+  /* figures */
+  figure{margin:2rem 0;}
+  figure img{
+    width:100%;border:1px solid var(--line);border-radius:8px;
+    background:var(--white);box-shadow:0 16px 40px -24px rgba(18,23,43,0.35);
+  }
+  figcaption{font-family:var(--mono);font-size:0.7rem;color:var(--slate);margin-top:0.8rem;line-height:1.6;}
+  .fig-pair{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin:2rem 0;}
+  .fig-pair figure{margin:0;}
+
+  /* insight cards */
+  .insights{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:2rem 0;}
+  .insight{
+    background:var(--white);border:1px solid var(--line);border-radius:8px;padding:1.6rem;
+    transition:border-color .18s,transform .18s;
+  }
+  .insight:hover{border-color:var(--cobalt);transform:translateY(-2px);}
+  .insight h4{font-family:var(--mono);font-size:0.68rem;color:var(--cobalt);margin-bottom:0.7rem;font-weight:500;}
+  .insight p{font-size:0.9rem;line-height:1.65;color:var(--navy);}
+
+  /* concepts */
+  .concepts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:2rem 0;}
+  .concept{
+    background:var(--white);border:1px solid var(--line);border-radius:8px;padding:1.6rem;
+    display:flex;flex-direction:column;
+  }
+  .concept.picked{border-color:var(--coral);border-width:2px;background:#FFFCFB;}
+  .concept h4{font-family:var(--display);font-size:1rem;font-weight:600;margin-bottom:0.6rem;}
+  .concept p{font-size:0.85rem;line-height:1.6;color:var(--slate);flex:1;}
+  .score{font-family:var(--mono);font-size:0.66rem;margin-top:1rem;padding-top:0.9rem;border-top:1px solid var(--line);color:var(--slate);}
+  .concept.picked .score{color:var(--coral);}
+
+  /* limitation block */
+  .limitation{
+    background:var(--coral-soft);border-left:3px solid var(--coral);
+    border-radius:0 8px 8px 0;padding:1.8rem 2rem;margin:2.5rem 0;
+  }
+  .limitation span{font-family:var(--mono);font-size:0.68rem;color:var(--coral);display:block;margin-bottom:0.7rem;}
+  .limitation p{font-size:0.94rem;line-height:1.75;color:var(--navy);max-width:680px;}
+  .limitation p + p{margin-top:0.9rem;}
+
+  /* takeaway */
+  .takeaway{
+    border-top:1px solid var(--line);margin-top:3rem;padding-top:2rem;
+    display:grid;grid-template-columns:180px 1fr;gap:2rem;
+  }
+  .takeaway h4{font-family:var(--mono);font-size:0.7rem;color:var(--cobalt);}
+  .takeaway p{font-size:0.95rem;line-height:1.75;color:var(--slate);max-width:660px;}
+  .takeaway p + p{margin-top:0.9rem;}
+  .takeaway strong{color:var(--navy);}
+
+  .live-link{
+    display:inline-flex;align-items:center;gap:0.55rem;margin-top:1.5rem;
+    font-family:var(--mono);font-size:0.76rem;color:var(--cobalt);text-decoration:none;
+    border:1px solid var(--cobalt);padding:0.6rem 1.1rem;border-radius:4px;transition:background .15s,color .15s;
+  }
+  .live-link:hover{background:var(--cobalt);color:var(--white);}
+
+  @media(max-width:820px){
+    .case,.jump{padding-left:1.4rem;padding-right:1.4rem;}
+    .case-head{grid-template-columns:1fr;gap:2rem;}
+    .facts{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:1.5rem;}
+    .fig-pair,.insights,.concepts{grid-template-columns:1fr;}
+    .takeaway{grid-template-columns:1fr;gap:1rem;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-mark" href="index.html"><span class="nav-dot"></span><span class="nav-name">Ben Westlund</span></a>
+  <ul class="nav-links">
+    <li><a href="work.html" class="active">UX Work</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="mailto:benwestlund@med.unc.edu" class="cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-head">
+  <span class="eyebrow">2 case studies &middot; full process</span>
+  <h1>UX research &amp; design work</h1>
+  <p class="lede">I run the messy front half of the design process — the part where you don't yet know what the problem is. <strong>Generative research, synthesis, and framing</strong>, then carrying insights forward into concepts a team can actually build.</p>
+</div>
+
+<div class="jump">
+  <a href="#table">01 / TABLE — Volunteer experience</a>
+  <a href="#echocare">02 / EchoCare — Digital health concept</a>
+</div>
+
+<!-- ============ TABLE ============ -->
+<section class="case" id="table">
+  <div class="case-head" data-reveal>
+    <div>
+      <span class="case-num">// CASE STUDY 01</span>
+      <h2>A Seat at TABLE</h2>
+      <p class="sub">A semester-long human-centered design engagement with TABLE, an Orange County nonprofit that feeds food-insecure kids. We were asked to grow family volunteering — and found that the real constraint wasn't willingness at all.</p>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt>ROLE</dt><dd>UX researcher &amp; design team member (team of 5)</dd></div>
+      <div class="fact"><dt>DURATION</dt><dd>One semester, full HCD cycle</dd></div>
+      <div class="fact"><dt>METHODS</dt><dd>Listening sessions, card sorting, empathy mapping, brainstorming, mash-ups, 2×2 prioritization, storyboarding</dd></div>
+      <div class="fact"><dt>PARTICIPANTS</dt><dd>17 across 4 sessions — parents, grandparents, a 4-year-old, and TABLE staff</dd></div>
+      <div class="fact"><dt>OUTCOME</dt><dd>Three validated concepts presented to TABLE leadership with an assumption-testing plan</dd></div>
+    </dl>
+  </div>
+
+  <div class="hmw" data-reveal>
+    <span>// THE BRIEF WE WERE GIVEN</span>
+    <p>"How might we create more opportunities for parents to volunteer alongside their children to advance TABLE's mission while fostering a culture of volunteerism and social justice?"</p>
+    <p class="rev">After discovery, we reframed it: <em>How might we expand and reimagine parent-child volunteering at TABLE in ways that are flexible, engaging, and build community — given real constraints with scheduling and communication?</em> The shift matters. The original brief assumed we needed to motivate people. Research showed motivation was never the bottleneck.</p>
+  </div>
+
+  <!-- INSPIRATION -->
+  <div class="phase" data-reveal>
+    <span class="phase-label">PHASE 01 — INSPIRATION</span>
+    <h3>Listening before assuming</h3>
+    <p>We ran two listening sessions with deliberately different participant profiles, because "parents who volunteer" is not one user group. Session one drew long-tenured families with teenagers who mostly do food delivery. Session two drew newer families with young children who mostly do kid shifts. Those two groups turned out to have almost inverse pain points.</p>
+    <ul>
+      <li><b>Conversation starter</b> — "Share one memory that stands out from volunteering with your child" — to surface emotional texture before logistics.</li>
+      <li><b>Guided listening session</b> with 5–6 open questions, deliberately engaging quieter participants so the loudest voice didn't set the agenda.</li>
+      <li><b>Card sort</b> — "What makes it hard?" then group the cards however makes sense to you. Letting participants define the categories rather than validating ours.</li>
+    </ul>
+    <figure>
+      <img src="table_inspiration.jpg" alt="Inspiration session summary showing methods used and participant profiles across two sessions" loading="lazy" />
+      <figcaption>Inspiration phase: methods and participant segmentation. Sampling for variation across tenure and child age is what made the contrast between groups visible.</figcaption>
+    </figure>
+  </div>
+
+  <!-- SYNTHESIS -->
+  <div class="phase" data-reveal>
+    <span class="phase-label">PHASE 02 — SYNTHESIS</span>
+    <h3>Empathy mapping across extremes and mainstream</h3>
+    <p>We mapped everything onto a Think &amp; Feel / See / Hear / Say &amp; Do / Pain / Gain grid, colour-coding by whether a data point came from an extreme user or the mainstream. Extremes are where the design opportunities hide — the person who's been volunteering for ten years and the person who just started see completely different systems.</p>
+    <figure>
+      <img src="table_empathy.jpg" alt="Empathy map with sticky notes organized into Think and Feel, See, Hear, Say and Do, Pain, and Gain quadrants" loading="lazy" />
+      <figcaption>Full empathy map. Dark green notes mark extreme-user data; light green marks mainstream. The Pain quadrant is almost entirely logistical — scheduling, communication, cancellations — while Gain is almost entirely relational.</figcaption>
+    </figure>
+    <p>That asymmetry <strong>was the finding</strong>. Parents weren't unmotivated; they were structurally blocked. Every stated desire ("teach my kids about privilege," "connect with other volunteers," "see local impact") collided with the same wall: shifts book months out, communication is one-way, and there's no way to reach the waitlist when someone cancels last-minute.</p>
+  </div>
+
+  <!-- INSIGHTS -->
+  <div class="phase" data-reveal>
+    <span class="phase-label">PHASE 03 — INSIGHT STATEMENTS</span>
+    <h3>From data to tension to insight</h3>
+    <p>We built each insight through a four-column chain — <strong>data → theme → tension/motivation → insight statement</strong> — so that every claim traced back to something a participant actually said. This is the part I carry over directly from qualitative research: an insight isn't a good line, it's a defensible one.</p>
+    <div class="insights">
+      <div class="insight">
+        <h4>// LACK OF SHIFT AVAILABILITY</h4>
+        <p>Parents of young children want to build volunteering into their routine, but limited shift availability and no real-time communication make opportunities feel scarce and hard to access.</p>
+      </div>
+      <div class="insight">
+        <h4>// OPPORTUNITY FOR CHILD EDUCATION</h4>
+        <p>Parents see TABLE as a way to teach kids about privilege and giving back without saviorism — but scheduling conflicts make consistency nearly impossible.</p>
+      </div>
+      <div class="insight">
+        <h4>// DESIRE FOR LOCAL IMPACT</h4>
+        <p>Families are motivated by seeing impact in their own community — "the children my children sit next to in class" — but limited participation cuts them off from feeling it.</p>
+      </div>
+      <div class="insight">
+        <h4>// FOSTER COMMUNITY BUILDING</h4>
+        <p>Parents want to connect with other volunteers, but weekly turnover in who shows up means those relationships never compound.</p>
+      </div>
+    </div>
+    <figure>
+      <img src="table_insights.jpg" alt="Insight statement tables showing data, theme, tension, and resulting insight statement" loading="lazy" />
+      <figcaption>The audit trail behind two of the four insights. Every insight statement is reconstructable from the raw data column.</figcaption>
+    </figure>
+  </div>
+
+  <!-- IDEATION -->
+  <div class="phase" data-reveal>
+    <span class="phase-label">PHASE 04 — IDEATION</span>
+    <h3>Generating wide, then cutting hard</h3>
+    <p>We brought participants back for co-ideation rather than ideating at them. Warm-up divergent thinking first ("how many uses for a water bottle?"), then rapid sketching, then a mash-up exercise — <strong>TABLE kid's shift × Little League tournament</strong> — to force unfamiliar combinations. Bundling turned scattered ideas into coherent concepts.</p>
+    <div class="fig-pair">
+      <figure>
+        <img src="table_ideation.jpg" alt="Ideation methods summary with warm-up, brainstorming, mash-up, and bundling" loading="lazy" />
+        <figcaption>Ideation methods and session composition.</figcaption>
+      </figure>
+      <figure>
+        <img src="table_prioritization.jpg" alt="2x2 value versus effort prioritization matrix covered in sticky notes" loading="lazy" />
+        <figcaption>Value × effort matrix. Value = alignment with the HMW and our insights; effort = TABLE's real time, money, and space cost.</figcaption>
+      </figure>
+    </div>
+    <p>Prioritizing on <strong>TABLE's</strong> effort rather than ours was a deliberate constraint. A concept that requires a nonprofit to hire staff is not a concept, it's a wish.</p>
+  </div>
+
+  <!-- CONCEPTS -->
+  <div class="phase" data-reveal>
+    <span class="phase-label">PHASE 05 — CONCEPTS</span>
+    <h3>Three concepts, one recommendation</h3>
+    <div class="concepts">
+      <div class="concept">
+        <h4>Home Shopping &amp; Bagging</h4>
+        <p>Families get a shopping list, assemble food or birthday kits at home on their own schedule, and donate them to TABLE. No fixed shift required.</p>
+        <div class="score">High value · Low effort</div>
+      </div>
+      <div class="concept">
+        <h4>Hot Food Prep at TABLE</h4>
+        <p>Volunteer families cook nutritious meals on-site with food safety guidance, adding nutrition education for both volunteers and recipients.</p>
+        <div class="score">High value · Very high effort</div>
+      </div>
+      <div class="concept picked">
+        <h4>TABLE Birthday Parties ★</h4>
+        <p>Birthday parties hosted at TABLE where guests pack food kits, families redirect gifts as donations, and teen volunteers run activities as staff.</p>
+        <div class="score">Very high value · Moderate effort — RECOMMENDED</div>
+      </div>
+    </div>
+    <p>Each concept was written as a full <strong>value proposition across both user groups</strong> — for host families and for teen volunteers, separately — and stress-tested against ten desirability, feasibility, and viability assumptions. We then had participants dot-vote their top three riskiest assumptions, which is what a pilot should actually test first.</p>
+    <figure>
+      <img src="table_storyboard.jpg" alt="Six-panel storyboard showing a family finding TABLE, hosting a birthday party, and sharing it" loading="lazy" />
+      <figcaption>Storyboard for the recommended concept, walking from the parent's original problem through discovery, the party itself, impact, and word-of-mouth adoption.</figcaption>
+    </figure>
+  </div>
+
+  <div class="takeaway" data-reveal>
+    <h4>// WHAT I'D DO DIFFERENTLY</h4>
+    <div>
+      <p>We never spoke to the people we were designing <em>around</em> — TABLE's recipient families. Two of three concepts touch them directly (hot meal prep, kit contents), and we built those on assumptions rather than evidence. In a longer engagement that's the first gap I'd close.</p>
+      <p>I'd also push harder on <strong>testing before recommending</strong>. We ended with a prioritized assumption list, which is honest, but a single low-cost prototype party would have converted our top-voted assumption from a guess into a finding.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECHOCARE ============ -->
+<section class="case" id="echocare">
+  <div class="case-head" data-reveal>
+    <div>
+      <span class="case-num">// CASE STUDY 02</span>
+      <h2>EchoCare</h2>
+      <p class="sub">A one-week rapid prototyping exercise: identify a public health problem, propose an AI-powered solution, and build a functional prototype. The result is a harm reduction companion app for people who use drugs — and an honest case study about the limits of designing without your users.</p>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt>ROLE</dt><dd>Sole designer &amp; researcher</dd></div>
+      <div class="fact"><dt>DURATION</dt><dd>One week — graduate hackathon, HBEH 690</dd></div>
+      <div class="fact"><dt>METHODS</dt><dd>Secondary research, concept design, interface prototyping, equity &amp; risk analysis</dd></div>
+      <div class="fact"><dt>TOOLS</dt><dd>Canva, ChatGPT and DALL·E for early ideation</dd></div>
+      <div class="fact"><dt>STATUS</dt><dd>Design concept — not user-tested</dd></div>
+    </dl>
+  </div>
+
+  <div class="phase" data-reveal>
+    <span class="phase-label">THE PROBLEM</span>
+    <h3>Resources exist. Reaching them is the problem.</h3>
+    <p>People who use drugs face stigma, criminalization, and fragmented access to the services that keep them alive — sterile syringes, naloxone, medication for opioid use disorder. The resources aren't uniformly absent; they're unevenly distributed, hard to navigate, and often gated behind institutions people have good reason to distrust. That's a discovery and access problem as much as a supply problem.</p>
+    <p>This is the domain I've spent years in — reentry health, harm reduction, rural opioid systems — so the problem framing draws on real subject expertise rather than a weekend of desk research.</p>
+  </div>
+
+  <div class="phase" data-reveal>
+    <span class="phase-label">THE CONCEPT</span>
+    <h3>Four entry points, one low-barrier surface</h3>
+    <p>EchoCare's home screen offers exactly four choices, because a person in crisis should not have to navigate an information architecture. Each maps to a distinct need surfaced in the literature.</p>
+    <figure>
+      <img src="echo_home.jpg" alt="EchoCare app home screen showing four options: Chat with Echo, Harm Reduction Tips, Find Resources, Safe-Use Mode" loading="lazy" />
+      <figcaption>Home screen and value proposition. Four options, no account required, no sign-in wall.</figcaption>
+    </figure>
+    <ul>
+      <li><b>Chat with Echo</b> — a judgment-free conversational companion grounded in CBT principles and harm reduction best practice.</li>
+      <li><b>Harm Reduction Tips</b> — evidence-based guidance on safer use, overdose response, and infectious disease prevention.</li>
+      <li><b>Find Resources</b> — geolocation or ZIP-based referrals to syringe service programs, naloxone sites, MOUD providers, and shelters.</li>
+      <li><b>Safe-Use Mode</b> — wearable-linked vital sign monitoring that alerts EMS and designated contacts if it detects overdose markers.</li>
+    </ul>
+  </div>
+
+  <div class="phase" data-reveal>
+    <span class="phase-label">INTERFACE DECISIONS</span>
+    <h3>Designing the tone, not just the screens</h3>
+    <p>The hardest design problem here wasn't layout — it was <strong>voice</strong>. In a stigmatized domain, the difference between a person engaging and closing the app is whether the first response reads as clinical judgment or as care. I scripted the chat flows explicitly, treating conversational copy as the primary interface.</p>
+    <figure>
+      <img src="echo_chat.jpg" alt="Three EchoCare chat screens showing conversations about finding resources, planning to use safely, and feeling ashamed" loading="lazy" />
+      <figcaption>Scripted conversation flows across three scenarios. Note the third: a shame disclosure is met with validation and an offer to connect to a human peer navigator — never a lecture, never a redirect to treatment.</figcaption>
+    </figure>
+    <div class="fig-pair">
+      <figure>
+        <img src="echo_safeuse.jpg" alt="Safe-Use Mode screen showing monitoring in progress with a stop button" loading="lazy" />
+        <figcaption>Safe-Use Mode. A persistent, visible STOP control matters — a monitoring feature you can't turn off is surveillance, not safety.</figcaption>
+      </figure>
+      <figure>
+        <img src="echo_resources.jpg" alt="Resource Finder screen with ZIP code entry and nearby service listings" loading="lazy" />
+        <figcaption>Resource Finder. ZIP entry as an alternative to geolocation, because requiring location access is a trust barrier for this population.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="phase" data-reveal>
+    <span class="phase-label">EQUITY &amp; RISK</span>
+    <h3>Who this excludes, and what could go wrong</h3>
+    <p>I wrote an explicit exclusion and risk analysis into the proposal rather than treating it as a footnote:</p>
+    <ul>
+      <li><b>Who's excluded</b> — anyone without a smartphone, data, or digital literacy. Mitigation: an SMS version, and shared-access devices through harm reduction centers and shelters.</li>
+      <li><b>Misinformation risk</b> — all content expert-curated and updated with harm reduction professionals, not model-generated on the fly.</li>
+      <li><b>Privacy risk</b> — anonymous use, encrypted interactions, location used only for referrals and never stored. For a criminalized population, a data breach isn't embarrassing, it's dangerous.</li>
+      <li><b>Over-reliance on AI</b> — direct pathways to human peer navigators and counselors, and persistent transparency that Echo is not a person.</li>
+    </ul>
+  </div>
+
+  <div class="limitation" data-reveal>
+    <span>// THE HONEST LIMITATION</span>
+    <p>EchoCare is a design concept grounded in secondary research and domain expertise. It has <strong>not been user-tested</strong>. I've spent several years studying substance use disorders, opioid use disorder, and health equity in the context of incarceration and reentry — so the problem space is well known to me.</p>
+    <p>But the people most affected by it have not yet had a voice in this design. I'm including that here rather than quietly omitting it, because a harm reduction tool designed without people who use drugs in the room is exactly the failure mode my academic work documents.</p>
+  </div>
+
+  <a class="live-link" href="https://benwestlund.github.io/EchoCare/" target="_blank" rel="noopener">View the live prototype ↗</a>
+
+  <div class="takeaway" data-reveal>
+    <h4>// WHAT COMES NEXT</h4>
+    <div>
+      <p>The proposal specifies a two-region pilot — one urban, one rural — to test usability, referral accuracy, and, most importantly, <strong>trust</strong>. Trust is the actual dependent variable here; an app that's technically accurate but reads as surveillance will not be used.</p>
+      <p>If I picked this up again, the first move wouldn't be more screens. It would be participatory sessions with people who use drugs and peer navigators, testing whether Echo's voice lands as care or as condescension.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 BEN WESTLUND — CHAPEL HILL, NC</p>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="cv.html">CV</a>
+    <a href="mailto:benwestlund@med.unc.edu">Email</a>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:0.06});
+document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
