@@ -1,470 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CV — Ben Westlund</title>
-<meta name="description" content="Curriculum vitae: Benjamin R. Westlund, UX researcher and PhD student in Health Behavior at UNC Gillings." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV | Ben Westlund</title>
+<meta name="description" content="Curriculum vitae for Benjamin R. Westlund, PhD student in Health Behavior at UNC Gillings with experience in UX research, human-centered design, and qualitative research.">
+<link rel="canonical" href="https://benwestlund.com/cv.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ben Westlund">
+<meta property="og:title" content="CV | Ben Westlund">
+<meta property="og:description" content="Curriculum vitae for Benjamin R. Westlund, PhD student in Health Behavior at UNC Gillings with experience in UX research, human-centered design, and qualitative research.">
+<meta property="og:url" content="https://benwestlund.com/cv.html">
+<meta property="og:image" content="https://benwestlund.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ben Westlund, UX researcher">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="newsreader-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="inter-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-/* ============================================
-   Ben Westlund — shared styles
-   ============================================ */
+@font-face{font-family:'Newsreader';src:url('newsreader-latin-standard-normal.woff2') format('woff2');font-weight:200 800;font-style:normal;font-display:swap;}
+@font-face{font-family:'Newsreader';src:url('newsreader-latin-standard-italic.woff2') format('woff2');font-weight:200 800;font-style:italic;font-display:swap;}
+@font-face{font-family:'Inter';src:url('inter-latin-standard-normal.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --navy:#12172B;
-  --navy-2:#1B2140;
-  --paper:#F7F6F3;
-  --white:#FFFFFF;
-  --cobalt:#3355FF;
-  --cobalt-soft:#E7ECFF;
-  --coral:#FF6B4A;
-  --coral-soft:#FFEAE3;
-  --slate:#6B7086;
-  --line:#E4E3DE;
-  --display:'Space Grotesk',sans-serif;
-  --body:'Inter',system-ui,sans-serif;
-  --mono:'IBM Plex Mono',monospace;
+  --ink:#151821;
+  --ink-2:#383D4A;
+  --muted:#656B78;
+  --paper:#FAF8F4;
+  --card:#FFFFFF;
+  --line:#E5E0D6;
+  --accent:#2C47C9;
+  --hl:#FBE6A2;
+  --hl-ink:#7A5800;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --wrap:1080px;
 }
 html{scroll-behavior:smooth;}
-body{
-  background:var(--paper);color:var(--navy);
-  font-family:var(--body);font-size:16px;line-height:1.6;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-}
-a{color:inherit;}
-img{max-width:100%;display:block;}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
-:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px;}
+a:hover{text-decoration-thickness:2px;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;}}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:300;}
+.skip:focus{left:1rem;top:1rem;}
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.1rem 2.75rem;
-  background:rgba(247,246,243,0.88);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
-}
-.nav-mark{display:flex;align-items:center;gap:0.55rem;text-decoration:none;}
-.nav-dot{width:9px;height:9px;border-radius:2px;background:var(--cobalt);transform:rotate(45deg);flex-shrink:0;}
-.nav-name{font-family:var(--display);font-weight:600;font-size:0.98rem;letter-spacing:-0.01em;}
-.nav-links{display:flex;align-items:center;gap:2.1rem;list-style:none;}
-.nav-links a{
-  font-family:var(--mono);font-size:0.86rem;font-weight:500;text-decoration:none;color:var(--slate);
-  padding:0.4rem 0.15rem;border-bottom:1.5px solid transparent;transition:color .15s,border-color .15s;
-}
-.nav-links a:hover,.nav-links a.active{color:var(--navy);border-color:var(--cobalt);}
-.nav-links a.cta{color:var(--white);background:var(--navy);padding:0.5rem 0.95rem;border-radius:3px;border:none;}
-.nav-links a.cta:hover{background:var(--cobalt);}
+/* type */
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-0.01em;color:var(--ink);}
+h1{font-size:clamp(2.3rem,5vw,3.6rem);line-height:1.08;}
+h2{font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.15;}
+h3{font-size:1.45rem;line-height:1.25;}
+p{color:var(--ink-2);}
+.kicker{display:block;font-family:var(--sans);font-size:.76rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem;}
+.lede{font-size:1.15rem;line-height:1.65;color:var(--ink-2);max-width:640px;}
+.prose p{margin-bottom:1.1rem;max-width:680px;}
+.prose ul{margin:0 0 1.2rem 1.2rem;max-width:680px;}
+.prose li{color:var(--ink-2);margin-bottom:.55rem;padding-left:.2rem;}
+.prose li b{color:var(--ink);font-weight:600;}
 
-/* BUTTONS */
-.btn{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  padding:0.85rem 1.5rem;border-radius:4px;
-  font-family:var(--body);font-weight:600;font-size:0.87rem;
-  text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s;
-  border:1px solid transparent;cursor:pointer;
-}
-.btn-primary{background:var(--navy);color:var(--white);}
-.btn-primary:hover{background:var(--cobalt);transform:translateY(-2px);box-shadow:0 8px 20px rgba(51,85,255,0.28);}
-.btn-ghost{border-color:var(--line);color:var(--navy);background:var(--white);}
-.btn-ghost:hover{border-color:var(--navy);transform:translateY(-2px);}
+/* qualitative-coding highlight: a highlighter stroke with a code tag above it */
+.code{background:linear-gradient(transparent 14%,var(--hl) 14%,var(--hl) 90%,transparent 90%);padding:0 .12em;position:relative;-webkit-box-decoration-break:clone;box-decoration-break:clone;color:inherit;}
+.code[data-code]::before{content:attr(data-code);position:absolute;left:.1em;bottom:100%;margin-bottom:.05em;font-family:var(--sans);font-size:.6rem;font-style:normal;font-weight:600;letter-spacing:.08em;line-height:1;text-transform:uppercase;color:var(--hl-ink);white-space:nowrap;}
+.tag{display:inline-block;font-family:var(--sans);font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--hl-ink);background:var(--hl);padding:.2rem .45rem;border-radius:2px;margin-bottom:.7rem;}
 
-/* SHELL */
-.sec{max-width:1160px;margin:0 auto;padding:5.5rem 2.75rem;}
-.sec-top{border-top:1px solid var(--line);}
-.sec-label{font-family:var(--mono);font-size:0.72rem;color:var(--cobalt);letter-spacing:0.04em;margin-bottom:0.9rem;display:block;}
-.sec h2{font-family:var(--display);font-size:clamp(1.7rem,3vw,2.15rem);font-weight:600;letter-spacing:-0.02em;max-width:660px;}
-.sec .lede{color:var(--slate);font-size:1rem;line-height:1.75;max-width:620px;margin-top:1.1rem;}
+/* layout */
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 2rem;}
+.sec{padding:5rem 0;border-top:1px solid var(--line);}
+.sec:first-of-type{border-top:none;}
 
-/* PAGE HEADER */
-.page-head{max-width:1160px;margin:0 auto;padding:9rem 2.75rem 3rem;}
-.page-head h1{
-  font-family:var(--display);font-weight:600;
-  font-size:clamp(2.3rem,4.6vw,3.5rem);line-height:1.06;letter-spacing:-0.03em;
-  margin-bottom:1.3rem;max-width:800px;
-}
-.page-head .lede{color:var(--slate);font-size:1.08rem;line-height:1.75;max-width:640px;}
-.page-head .lede strong{color:var(--navy);font-weight:600;}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  font-family:var(--mono);font-size:0.74rem;color:var(--cobalt);
-  background:var(--cobalt-soft);padding:0.4rem 0.75rem;border-radius:3px;margin-bottom:1.6rem;
-}
-.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cobalt);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+/* nav */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,244,.96);border-bottom:1px solid var(--line);}
+.site-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px;flex-wrap:wrap;}
+.brand{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center;}
+.nav-links a{font-size:.93rem;color:var(--ink-2);text-decoration:none;padding:.3rem 0;border-bottom:1.5px solid transparent;}
+.nav-links a:hover{color:var(--ink);border-color:var(--ink);}
+.nav-links a[aria-current="page"]{color:var(--ink);border-color:var(--accent);}
+.nav-links .nav-email{color:var(--accent);font-weight:600;}
 
-/* FOOTER */
-footer{
-  max-width:1160px;margin:0 auto;padding:3rem 2.75rem 4rem;border-top:1px solid var(--line);
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
-}
-footer p{font-family:var(--mono);font-size:0.72rem;color:var(--slate);}
-.foot-links{display:flex;gap:1.4rem;}
-.foot-links a{font-family:var(--mono);font-size:0.72rem;color:var(--slate);text-decoration:none;}
-.foot-links a:hover{color:var(--cobalt);}
+/* buttons */
+.btn{display:inline-block;font-family:var(--sans);font-size:.95rem;font-weight:600;padding:.8rem 1.3rem;border-radius:4px;text-decoration:none;border:1.5px solid var(--ink);}
+.btn-solid{background:var(--ink);color:#fff;}
+.btn-solid:hover{background:var(--accent);border-color:var(--accent);}
+.btn-line{color:var(--ink);background:transparent;}
+.btn-line:hover{background:var(--ink);color:#fff;}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;}
 
-/* REVEAL */
-[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
-[data-reveal].in{opacity:1;transform:translateY(0);}
+/* page header */
+.page-head{padding:4.5rem 0 3rem;}
+.page-head h1{margin-bottom:1.2rem;max-width:820px;}
 
-@media(max-width:820px){
-  nav{padding:1rem 1.4rem;}
-  .sec,.page-head,footer{padding-left:1.4rem;padding-right:1.4rem;}
-  .page-head{padding-top:7.5rem;}
-  .nav-links{gap:1rem;}
-  .nav-links a:not(.cta){display:none;}
+/* figures + lightbox */
+figure{margin:2rem 0;}
+.shot{position:relative;display:block;width:100%;padding:0;border:1px solid var(--line);background:var(--card);border-radius:4px;overflow:hidden;cursor:zoom-in;}
+.shot img{width:100%;}
+.shot .enlarge{position:absolute;right:.6rem;bottom:.6rem;font-family:var(--sans);font-size:.72rem;font-weight:600;color:var(--ink);background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:3px;padding:.25rem .5rem;}
+figcaption{font-size:.86rem;line-height:1.55;color:var(--muted);margin-top:.7rem;max-width:720px;}
+.fig-pair{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+dialog.lightbox{border:none;padding:0;background:transparent;max-width:96vw;max-height:94vh;margin:auto;}
+dialog.lightbox::backdrop{background:rgba(15,17,23,.95);}
+dialog.lightbox img{max-width:96vw;max-height:84vh;width:auto;border-radius:3px;background:#fff;}
+dialog.lightbox p{color:#E9E6DF;font-size:.88rem;margin-top:.6rem;max-width:900px;}
+dialog.lightbox button{position:fixed;top:1rem;right:1rem;font:600 .9rem var(--sans);background:#fff;color:var(--ink);border:none;border-radius:4px;padding:.5rem .9rem;cursor:pointer;}
+
+/* footer */
+.site-foot{border-top:1px solid var(--line);padding:3rem 0 4rem;margin-top:2rem;}
+.site-foot .wrap{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-size:.9rem;color:var(--muted);}
+.site-foot a{color:var(--ink-2);}
+.foot-links{display:flex;gap:1.3rem;flex-wrap:wrap;}
+
+@media(max-width:760px){
+  body{font-size:16px;}
+  .wrap{padding:0 1.25rem;}
+  .site-nav{position:static;}
+  .site-nav .wrap{padding-top:.8rem;padding-bottom:.8rem;}
+  .nav-links{gap:1.1rem;flex-wrap:wrap;}
+  .sec{padding:3.5rem 0;}
+  .page-head{padding:3rem 0 2rem;}
+  .fig-pair{grid-template-columns:1fr;gap:0;}
+  .code[data-code]::before{position:static;display:inline;margin:0 .35em 0 0;font-size:.55rem;vertical-align:.45em;}
 }
 
-  /* CONTACT DROPDOWN */
-  .contact-wrap{position:relative;}
-  .contact-trigger{
-    font-family:var(--mono);font-weight:600;font-size:0.86rem;color:var(--white);
-    background:var(--navy);border:none;padding:0.75rem 1.35rem;border-radius:5px;
-    cursor:pointer;transition:background .15s,transform .15s;letter-spacing:0.01em;
-  }
-  .contact-trigger:hover{background:var(--cobalt);transform:translateY(-1px);}
-  .contact-menu{
-    position:absolute;top:100%;right:0;padding-top:0.7rem;
-    opacity:0;pointer-events:none;transform:translateY(-6px);
-    transition:opacity .16s ease,transform .16s ease;z-index:200;
-  }
-  .contact-wrap:hover .contact-menu,
-  .contact-wrap.open .contact-menu{opacity:1;pointer-events:auto;transform:translateY(0);}
-  .contact-menu-inner{
-    background:var(--white);border:1px solid var(--line);border-radius:10px;
-    padding:0.55rem;min-width:220px;box-shadow:0 20px 44px -14px rgba(18,23,43,0.38);
-  }
-  .contact-item{
-    display:flex;align-items:center;gap:0.9rem;
-    font-family:var(--body);font-weight:500;font-size:0.94rem;color:var(--navy);
-    text-decoration:none;padding:0.85rem 0.9rem;border-radius:7px;
-    transition:background .12s,color .12s;
-  }
-  .contact-item:hover{background:var(--cobalt-soft);color:var(--cobalt);}
-  .c-ic{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:32px;height:32px;border-radius:7px;flex-shrink:0;
-    font-size:0.95rem;color:var(--white);
-  }
-  .c-ic.mail{background:#FF9F45;}
-  .c-ic.li{background:#0077B5;font-family:var(--display);font-weight:700;font-size:0.82rem;}
-
-</style>
-<style>
-  .cv-actions{max-width:1160px;margin:0 auto;padding:0 2.75rem 3rem;display:flex;gap:0.9rem;flex-wrap:wrap;}
-
-  .cv-body{max-width:1160px;margin:0 auto;padding:0 2.75rem 4rem;}
-  .cv-block{
-    border-top:1px solid var(--line);padding:2.5rem 0;
-    display:grid;grid-template-columns:200px 1fr;gap:3rem;
-  }
-  .cv-block > h2{
-    font-family:var(--mono);font-size:0.72rem;color:var(--cobalt);
-    letter-spacing:0.04em;font-weight:500;padding-top:0.3rem;
-  }
-  .entry{margin-bottom:2rem;max-width:720px;}
-  .entry:last-child{margin-bottom:0;}
-  .entry-top{display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;flex-wrap:wrap;margin-bottom:0.2rem;}
-  .entry h3{font-family:var(--display);font-size:1.02rem;font-weight:600;letter-spacing:-0.01em;}
-  .entry .when{font-family:var(--mono);font-size:0.7rem;color:var(--slate);white-space:nowrap;}
-  .entry .where{font-size:0.9rem;color:var(--navy);margin-bottom:0.5rem;}
-  .entry p{font-size:0.9rem;line-height:1.7;color:var(--slate);}
-  .entry .honors{
-    font-family:var(--mono);font-size:0.68rem;color:var(--cobalt);
-    background:var(--cobalt-soft);display:inline-block;padding:0.25rem 0.55rem;border-radius:3px;margin-top:0.5rem;
-  }
-
-  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;max-width:720px;}
-  .skill-set h4{font-family:var(--mono);font-size:0.68rem;color:var(--cobalt);margin-bottom:0.7rem;}
-  .skill-set p{font-size:0.88rem;line-height:1.75;color:var(--slate);}
-
-  .pub{
-    padding:1.3rem 0;border-bottom:1px solid var(--line);max-width:760px;
-  }
-  .pub:first-child{padding-top:0;}
-  .pub:last-child{border-bottom:none;}
-  .pub .pstat{
-    font-family:var(--mono);font-size:0.66rem;padding:0.25rem 0.55rem;border-radius:3px;
-    display:inline-block;margin-bottom:0.55rem;
-  }
-  .p-live{background:var(--cobalt-soft);color:var(--cobalt);}
-  .p-draft{background:#F1F0EC;color:var(--slate);}
-  .p-accept{background:var(--coral-soft);color:var(--coral);}
-  .pub h3{font-family:var(--display);font-size:0.98rem;font-weight:600;line-height:1.45;margin-bottom:0.4rem;}
-  .pub .authors{font-size:0.84rem;color:var(--slate);line-height:1.6;}
-  .pub a{font-family:var(--mono);font-size:0.72rem;color:var(--cobalt);text-decoration:none;display:inline-block;margin-top:0.5rem;}
-  .pub a:hover{text-decoration:underline;}
-
-  .contact-lines{max-width:720px;}
-  .cline{display:flex;gap:1.2rem;padding:0.75rem 0;border-bottom:1px solid var(--line);font-size:0.9rem;}
-  .cline:last-child{border-bottom:none;}
-  .cline dt{font-family:var(--mono);font-size:0.68rem;color:var(--cobalt);min-width:110px;padding-top:0.15rem;}
-  .cline dd{color:var(--navy);}
-  .cline a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line);}
-  .cline a:hover{border-color:var(--cobalt);}
-
-  @media(max-width:820px){
-    .cv-actions,.cv-body{padding-left:1.4rem;padding-right:1.4rem;}
-    .cv-block{grid-template-columns:1fr;gap:1.2rem;}
-    .skills-grid{grid-template-columns:1fr;}
-  }
+.cv-actions{margin-bottom:1rem;}
+.cv-block{display:grid;grid-template-columns:220px 1fr;gap:2.5rem;padding:2.8rem 0;border-top:1px solid var(--line);}
+.cv-block:first-of-type{border-top:1px solid var(--ink);}
+.cv-block > h2{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);padding-top:.35rem;}
+.entry{margin-bottom:1.8rem;max-width:720px;}
+.entry:last-child{margin-bottom:0;}
+.entry-top{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap;}
+.entry h3{font-size:1.25rem;}
+.when{font-size:.88rem;color:var(--muted);white-space:nowrap;}
+.where{font-size:.92rem;color:var(--muted);margin:.15rem 0 .45rem;}
+.entry p{font-size:.97rem;}
+.honors{display:inline-block;font-size:.85rem;color:var(--ink);margin-top:.35rem;font-style:italic;}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;}
+.skills h3{font-family:var(--sans);font-size:.95rem;font-weight:600;margin-bottom:.35rem;}
+.skills p{font-size:.95rem;}
+.plain p{margin-bottom:.4rem;}
+@media(max-width:860px){
+  .cv-block{grid-template-columns:1fr;gap:1rem;padding:2.2rem 0;}
+  .skills{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
-
-<nav>
-  <a class="nav-mark" href="index.html"><span class="nav-dot"></span><span class="nav-name">Ben Westlund</span></a>
-  <ul class="nav-links">
-    <li><a href="work.html">UX Work</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="cv.html" class="active">CV</a></li>
-    <li class="contact-wrap">
-      <button class="cta contact-trigger" type="button" aria-haspopup="true" aria-expanded="false">Contact ▾</button>
-      <div class="contact-menu">
-        <div class="contact-menu-inner">
-          <a class="contact-item" href="mailto:benwestlund@med.unc.edu">
-            <span class="c-ic mail">&#9993;</span> Email
-          </a>
-          <a class="contact-item" href="https://www.linkedin.com/in/benwestlund" target="_blank" rel="noopener">
-            <span class="c-ic li">in</span> LinkedIn
-          </a>
-        </div>
-      </div>
-    </li>
-  </ul>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html">Ben Westlund</a>
+    <ul class="nav-links">
+      <li><a href="work.html">Case studies</a></li><li><a href="research.html">Research</a></li><li><a href="index.html#about">About</a></li><li><a href="cv.html" aria-current="page">CV</a></li><li><a class="nav-email" href="mailto:benwestlund@med.unc.edu">Email</a></li>
+    </ul>
+  </div>
 </nav>
 
-<div class="page-head">
-  <span class="eyebrow">updated November 2026</span>
+<main id="main">
+<div class="wrap">
+
+<header class="page-head">
+  <span class="kicker">Updated November 2026</span>
   <h1>Curriculum vitae</h1>
-  <p class="lede">Benjamin R. Westlund — PhD student in Health Behavior at UNC Gillings, with applied experience in human-centered design, qualitative research, and community health programs.</p>
+  <p class="lede">Benjamin R. Westlund, PhD student in Health Behavior at UNC Gillings, with applied experience in human-centered design, qualitative research, and community health programs.</p>
+</header>
+
+<div class="actions cv-actions">
+  <a class="btn btn-solid" href="Westlund_Ben_CV.pdf" download>Download PDF</a>
+  <a class="btn btn-line" href="mailto:benwestlund@med.unc.edu">Email me</a>
 </div>
 
-<div class="cv-actions">
-  <a class="btn btn-primary" href="Westlund_Ben_CV.pdf" download>↓ Download PDF</a>
-  <a class="btn btn-ghost" href="mailto:benwestlund@med.unc.edu">Email me</a>
-</div>
+<section class="cv-block">
+  <h2>Education</h2>
+  <div>
+    <div class="entry"><div class="entry-top"><h3>PhD, Health Behavior</h3><span class="when">Expected May 2029</span></div><p class="where">UNC Gillings School of Global Public Health</p><p>Faculty advisor: Dr. Vivian Go</p><span class="honors">Dorothy Dunn Scholar</span></div>
+    <div class="entry"><div class="entry-top"><h3>MSPH, Health Behavior</h3><span class="when">Expected December 2026</span></div><p class="where">UNC Gillings School of Global Public Health</p><span class="honors">Dorothy Dunn Scholar</span></div>
+    <div class="entry"><div class="entry-top"><h3>Graduate Certificate, Innovation for the Public Good</h3><span class="when">Expected 2027</span></div><p class="where">University of North Carolina at Chapel Hill</p><p>Coursework in human-centered design, plus Human Factors &amp; AI in Health (semester-long applied human factors project) and Health App Development in Java.</p></div>
+    <div class="entry"><div class="entry-top"><h3>BA, Sociology</h3><span class="when">2018–2022</span></div><p class="where">Wake Forest University</p><p>Major: Sociology, Social Determinants of Health and Well-being · Minor equivalent: Health and Exercise Science</p><span class="honors">Cum Laude · Honors and Distinction in Sociology</span></div>
+  </div>
+</section>
 
-<div class="cv-body">
+<section class="cv-block">
+  <h2>Research and design experience</h2>
+  <div>
+    <div class="entry"><div class="entry-top"><h3>Graduate Research Assistant, AI Fellows Program</h3><span class="when">Aug 2026–present</span></div><p class="where">University of North Carolina at Chapel Hill</p><p>Partner with faculty to build AI-enabled course and classroom tools. Conduct in-depth qualitative interviews with two user groups, faculty and students, and translate findings into design requirements for the tools.</p></div>
+    <div class="entry"><div class="entry-top"><h3>Graduate Research Assistant</h3><span class="when">Aug 2024–present</span></div><p class="where">Department of Health Behavior, UNC Gillings</p><p>Rural opioid harm reduction research (OHOP), provider alcohol use in Vietnam, implementation strategy tracking, and emergency preparedness planning. Qualitative coding and analysis in NVivo and Dedoose, survey instrument development, theory-driven memo writing, and mixed-methods integration.</p></div>
+    <div class="entry"><div class="entry-top"><h3>Human-Centered Design Lead, TABLE</h3><span class="when">2025</span></div><p class="where">TABLE, Orange County, NC (semester engagement)</p><p>Led a full human-centered design cycle with a local food-security nonprofit: designed and facilitated listening sessions and card sorts, built empathy maps and insight statements, ran co-ideation workshops, and prioritized concepts with a value/effort matrix. Presented three concepts, the riskiest assumptions behind the recommended one, and a plan to test them to TABLE leadership.</p></div>
+    <div class="entry"><div class="entry-top"><h3>Research and Program Support Specialist</h3><span class="when">Aug 2022–Jul 2024</span></div><p class="where">NC Formerly Incarcerated Transition Program (NC FIT), UNC Family Medicine</p><p>Supported clinical reentry navigation for formerly incarcerated people through care coordination, data tracking, and Medicaid suspension and reactivation. Contributed to program evaluation, qualitative interviews, county stakeholder communication, and partnership development.</p></div>
+    <div class="entry"><div class="entry-top"><h3>Senior Honors Thesis Researcher</h3><span class="when">Aug 2021–May 2022</span></div><p class="where">Wake Forest University</p><p>Designed and led an independent qualitative study on the intersection of COVID-19 and opioid use disorder. Conducted interviews, completed thematic analysis, and wrote a grant-funded thesis.</p></div>
+    <div class="entry"><div class="entry-top"><h3>Research Assistant</h3><span class="when">May–Aug 2021</span></div><p class="where">Center for Health Policy and Inequalities Research (CHPIR)</p><p>HRV intervention research, literature reviews, qualitative memo development, and data management.</p></div>
+    <div class="entry"><div class="entry-top"><h3>Teaching Assistant</h3><span class="when">Aug–Dec 2021</span></div><p class="where">Wake Forest University, undergraduate sociology</p><p>Supported course design, graded writing assignments, and led short lectures for an undergraduate sociology seminar.</p></div>
+  </div>
+</section>
 
-  <!-- EDUCATION -->
-  <section class="cv-block" data-reveal>
-    <h2>// EDUCATION</h2>
-    <div>
-      <div class="entry">
-        <div class="entry-top"><h3>PhD, Health Behavior</h3><span class="when">Expected May 2029</span></div>
-        <p class="where">UNC Gillings School of Global Public Health</p>
-        <p>Faculty advisor: Dr. Vivian Go</p>
-        <span class="honors">Dorothy Dunn Scholar</span>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>MSPH, Health Behavior</h3><span class="when">Expected December 2026</span></div>
-        <p class="where">UNC Gillings School of Global Public Health</p>
-        <span class="honors">Dorothy Dunn Scholar</span>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>B.A., Sociology</h3><span class="when">2018 — 2022</span></div>
-        <p class="where">Wake Forest University</p>
-        <p>Major: Sociology, Social Determinants of Health and Well-being · Minor equivalent: Health and Exercise Science</p>
-        <span class="honors">Cum Laude · Honors &amp; Distinction in Sociology</span>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>Graduate Certificate, Innovation for the Public Good</h3><span class="when">Expected 2027</span></div>
-        <p class="where">University of North Carolina at Chapel Hill</p>
-        <p>Coursework in human-centered design, plus Human Factors &amp; AI in Health (semester-long applied human factors project) and Health App Development in Java.</p>
-      </div>
-    </div>
-  </section>
+<section class="cv-block">
+  <h2>Skills and methods</h2>
+  <div class="skills">
+    <div><h3>UX and design research</h3><p>Human-centered design facilitation · Listening sessions · Card sorting · Empathy mapping · Insight synthesis · How-might-we framing · Co-ideation workshops · Value/effort prioritization · Storyboarding · Assumption mapping · Miro</p></div>
+    <div><h3>Qualitative</h3><p>Thematic analysis · Grounded theory · Framework Method · Codebook development · Intercoder reliability · Memo writing · NVivo · Dedoose</p></div>
+    <div><h3>Quantitative and mixed methods</h3><p>Survey design · Data management · Stata · Joint displays · Mixed-methods integration · Hybrid designs</p></div>
+    <div><h3>Implementation science</h3><p>CFIR · ERIC · Barrier and strategy matrices · Implementation strategy tracking · Hybrid effectiveness-implementation designs</p></div>
+  </div>
+</section>
 
-  <!-- EXPERIENCE -->
-  <section class="cv-block" data-reveal>
-    <h2>// RESEARCH &amp; DESIGN EXPERIENCE</h2>
-    <div>
-      <div class="entry">
-        <div class="entry-top"><h3>Graduate Research Assistant, AI Fellows Program</h3><span class="when">Aug 2026 — present</span></div>
-        <p class="where">University of North Carolina at Chapel Hill</p>
-        <p>Partner with faculty to build AI-enabled course and classroom tools. Conduct in-depth qualitative interviews with two user groups, faculty and students, and translate findings into design requirements for the tools.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>Graduate Research Assistant</h3><span class="when">Aug 2024 — present</span></div>
-        <p class="where">Department of Health Behavior, UNC Gillings</p>
-        <p>Rural opioid harm-reduction research (OHOP), provider alcohol use in Vietnam, implementation strategy tracking, and emergency preparedness planning. Qualitative coding and analysis in NVivo and Dedoose, survey instrument development, theory-driven memo writing, and mixed-methods integration.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>Human-Centered Design Lead — TABLE</h3><span class="when">2025</span></div>
-        <p class="where">TABLE, Orange County NC (semester engagement)</p>
-        <p>Led a full HCD cycle with a local food-security nonprofit: designed and facilitated listening sessions and card sorts with 17 participants, built empathy maps and insight statements, ran co-ideation workshops, and prioritized concepts with a value/effort matrix. Presented three validated concepts and an assumption-testing plan to TABLE leadership.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>Research &amp; Program Support Specialist</h3><span class="when">Aug 2022 — Jul 2024</span></div>
-        <p class="where">NC Formerly Incarcerated Transition Program (NC FIT), UNC Family Medicine</p>
-        <p>Supported clinical reentry navigation for formerly incarcerated individuals through care coordination, data tracking, and Medicaid suspension/reactivation. Contributed to program evaluation, qualitative interviews, county stakeholder communication, and strategic partnership development.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>Senior Honors Thesis Researcher</h3><span class="when">Aug 2021 — May 2022</span></div>
-        <p class="where">Wake Forest University</p>
-        <p>Designed and led an independent qualitative study on the intersection of COVID-19 and opioid use disorder. Conducted interviews, completed thematic analysis, and authored a grant-winning thesis.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>Research Assistant</h3><span class="when">May — Aug 2021</span></div>
-        <p class="where">Center for Health Policy and Inequalities Research (CHPIR)</p>
-        <p>HRV intervention research, literature reviews, qualitative memo development, and data management.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>Teaching Assistant</h3><span class="when">Aug — Dec 2021</span></div>
-        <p class="where">Wake Forest University — Undergraduate Sociology</p>
-        <p>Supported course design, graded writing assignments, and led mini lectures for an undergraduate sociology seminar.</p>
-      </div>
-    </div>
-  </section>
+<section class="cv-block">
+  <h2>Publications</h2>
+  <div>
+    <div class="entry"><div class="entry-top"><h3>Emergency preparedness planning: lessons from COVID-19 and the opioid crisis in rural Ohio</h3><span class="when">Preprint</span></div><p class="where">Westlund BR, Sibley AL, Colston DC, Devadas J, Enderle MN, Piscalko HM, Miller WC, Go VF</p><p><a href="https://doi.org/10.64898/2026.07.30.26359388" rel="noopener">DOI: 10.64898/2026.07.30.26359388</a></p></div>
+    <div class="entry"><div class="entry-top"><h3>Upskilling Everyone: a multipronged strategy to foster generative AI literacy in faculty and students simultaneously</h3><span class="when">Under review</span></div><p class="where">Merino YM, Westlund BR, Rice DK · <em>Pedagogy in Health Promotion</em></p></div>
+    <div class="entry"><div class="entry-top"><h3>When is the juice worth the squeeze? Costs versus benefits of implementation strategy tracking</h3><span class="when">Presented, SIRC 2026</span></div><p class="where">Westlund B, Powell B, Dang HLT, Cao TVA, Nguyen HN, Nguyen KN, Sripaipan T, Rossi SL, Miller WC, Go VF, Bartels SM</p></div>
+    <div class="entry"><div class="entry-top"><h3>Healthcare providers' own use in Vietnam: a socioecological analysis of motivations, barriers, and facilitators to drinking</h3><span class="when">In preparation</span></div><p class="where">Westlund B, et al.</p></div>
+    <div class="entry"><div class="entry-top"><h3>Human-centered design and implementation science: a scoping review</h3><span class="when">In progress</span></div><p class="where">Supporting author</p></div>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section class="cv-block" data-reveal>
-    <h2>// SKILLS &amp; METHODS</h2>
-    <div class="skills-grid">
-      <div class="skill-set">
-        <h4>UX &amp; DESIGN RESEARCH</h4>
-        <p>Human-centered design facilitation · Listening sessions · Card sorting · Empathy mapping · Insight synthesis · How-Might-We framing · Co-ideation workshops · Value/effort prioritization · Storyboarding · Assumption testing · Miro</p>
-      </div>
-      <div class="skill-set">
-        <h4>QUALITATIVE</h4>
-        <p>Thematic analysis · Grounded theory · Framework Method · Codebook development · Intercoder reliability · Memo writing · NVivo · Dedoose</p>
-      </div>
-      <div class="skill-set">
-        <h4>QUANTITATIVE &amp; MIXED</h4>
-        <p>Survey design · Data management · Stata · Joint displays · Mixed-methods integration · Hybrid designs</p>
-      </div>
-      <div class="skill-set">
-        <h4>IMPLEMENTATION SCIENCE</h4>
-        <p>CFIR · ERIC · Barrier/strategy matrices · Implementation strategy tracking · Hybrid effectiveness-implementation designs</p>
-      </div>
-    </div>
-  </section>
+<section class="cv-block">
+  <h2>Talks and presentations</h2>
+  <div>
+    <div class="entry"><div class="entry-top"><h3>Invited Speaker and Expert Discussant</h3><span class="when">Jan 2027</span></div><p class="where">Global Health Implementation Science Symposium, Seoul National University</p></div>
+    <div class="entry"><div class="entry-top"><h3>Oral Presentation</h3><span class="when">Sep 2026</span></div><p class="where">Society for Implementation Research Collaboration (SIRC) Conference, Minneapolis, MN</p><p><em>When is the juice worth the squeeze? Costs versus benefits of implementation strategy tracking</em></p></div>
+  </div>
+</section>
 
-  <!-- PUBLICATIONS -->
-  <section class="cv-block" data-reveal>
-    <h2>// PUBLICATIONS</h2>
-    <div>
-      <div class="pub">
-        <span class="pstat p-live">Pre-published</span>
-        <h3>Emergency preparedness planning: lessons from COVID-19 and the opioid crisis in rural Ohio</h3>
-        <p class="authors">Westlund BR, Sibley AL, Colston DC, Devadas J, Enderle MN, Piscalko HM, Miller WC, Go VF</p>
-        <a href="https://doi.org/10.64898/2026.07.30.26359388" target="_blank" rel="noopener">DOI: 10.64898/2026.07.30.26359388 ↗</a>
-      </div>
-      <div class="pub">
-        <span class="pstat p-accept">Presented — SIRC 2026</span>
-        <h3>When is the juice worth the squeeze? Costs versus benefits of implementation strategy tracking</h3>
-        <p class="authors">Westlund B, Powell B, Dang HLT, Cao TVA, Nguyen HN, Nguyen KN, Sripaipan T, Rossi SL, Miller WC, Go VF, Bartels SM</p>
-      </div>
-      <div class="pub">
-        <span class="pstat p-draft">In draft</span>
-        <h3>Healthcare providers' own use in Vietnam: A socioecological analysis of motivations, barriers, and facilitators to drinking</h3>
-        <p class="authors">Westlund B, et al. · Manuscript in preparation</p>
-      </div>
-      <div class="pub">
-        <span class="pstat p-accept">Under review</span>
-        <h3>Upskilling Everyone: A multipronged strategy to foster generative AI literacy in faculty and students simultaneously</h3>
-        <p class="authors">Merino YM, Westlund BR, Rice DK · <em>Pedagogy in Health Promotion</em></p>
-      </div>
-      <div class="pub">
-        <span class="pstat p-draft">In progress</span>
-        <h3>Human-Centered Design × Implementation Science: a scoping review</h3>
-        <p class="authors">Supporting author · In progress</p>
-      </div>
-    </div>
-  </section>
+<section class="cv-block">
+  <h2>Awards and grants</h2>
+  <div>
+    <div class="entry"><div class="entry-top"><h3>Dorothy Dunn Scholarship</h3><span class="when">2024</span></div><p class="where">UNC Gillings School of Global Public Health</p></div>
+    <div class="entry"><div class="entry-top"><h3>Faculty-Student Facilitation Fund Grant</h3><span class="when">2022</span></div><p class="where">Wake Forest University</p><p>Westlund B &amp; Brewer A (advisor). <em>The Intersection of the Opioid Crisis and the COVID-19 Pandemic.</em> $200, funded.</p></div>
+  </div>
+</section>
 
-  <!-- TALKS -->
-  <section class="cv-block" data-reveal>
-    <h2>// TALKS &amp; PRESENTATIONS</h2>
-    <div>
-      <div class="entry">
-        <div class="entry-top"><h3>Invited Speaker &amp; Expert Discussant</h3><span class="when">Jan 2027</span></div>
-        <p class="where">Global Health Implementation Science Symposium, Seoul National University</p>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>Oral Presentation</h3><span class="when">Sep 2026</span></div>
-        <p class="where">Society for Implementation Research Collaboration (SIRC) Conference, Minneapolis, MN</p>
-        <p><em>When is the juice worth the squeeze? Costs versus benefits of implementation strategy tracking</em></p>
-      </div>
-    </div>
-  </section>
+<section class="cv-block">
+  <h2>Affiliations</h2>
+  <div class="plain">
+    <p>American Public Health Association (APHA), Early Career Professional</p>
+    <p>North Carolina Public Health Association</p>
+    <p>Society for Implementation Research Collaboration (SIRC), 2026 presenter</p>
+  </div>
+</section>
 
-  <!-- AWARDS -->
-  <section class="cv-block" data-reveal>
-    <h2>// AWARDS &amp; GRANTS</h2>
-    <div>
-      <div class="entry">
-        <div class="entry-top"><h3>Dorothy Dunn Scholarship</h3><span class="when">2024</span></div>
-        <p class="where">UNC Gillings School of Global Public Health</p>
-      </div>
-      <div class="entry">
-        <div class="entry-top"><h3>Faculty-Student Facilitation Fund Grant</h3><span class="when">2022</span></div>
-        <p class="where">Wake Forest University</p>
-        <p>Westlund B &amp; Brewer A (advisor). <em>The Intersection of the Opioid Crisis and the COVID-19 Pandemic.</em> $200, funded.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- AFFILIATIONS -->
-  <section class="cv-block" data-reveal>
-    <h2>// AFFILIATIONS</h2>
-    <div>
-      <div class="entry">
-        <p>American Public Health Association (APHA) — Early Career Professional</p>
-        <p>North Carolina Public Health Association</p>
-        <p>Society for Implementation Research Collaboration (SIRC) — 2026 presenter</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="cv-block" data-reveal>
-    <h2>// CONTACT</h2>
-    <dl class="contact-lines">
-      <div class="cline"><dt>EMAIL</dt><dd><a href="mailto:benwestlund@med.unc.edu">benwestlund@med.unc.edu</a></dd></div>
-      <div class="cline"><dt>INSTITUTION</dt><dd>UNC Gillings School of Global Public Health, Department of Health Behavior</dd></div>
-      <div class="cline"><dt>LOCATION</dt><dd>170 Rosenau Hall, Chapel Hill, NC 27599</dd></div>
-    </dl>
-  </section>
+<section class="cv-block">
+  <h2>Contact</h2>
+  <div class="plain">
+    <p><a href="mailto:benwestlund@med.unc.edu">benwestlund@med.unc.edu</a> · <a href="https://www.linkedin.com/in/benwestlund" rel="noopener">LinkedIn</a></p>
+    <p>Department of Health Behavior, UNC Gillings School of Global Public Health</p>
+    <p>170 Rosenau Hall, Chapel Hill, NC 27599</p>
+  </div>
+</section>
 
 </div>
-
-<footer>
-  <p>© 2026 BEN WESTLUND — CHAPEL HILL, NC</p>
-  <div class="foot-links">
-    <a href="index.html">Home</a>
-    <a href="work.html">UX Work</a>
-    <a href="research.html">Research</a>
-    <a href="mailto:benwestlund@med.unc.edu">Email</a>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Ben Westlund · Chapel Hill, NC · <a href="mailto:benwestlund@med.unc.edu">benwestlund@med.unc.edu</a></p>
+    <div class="foot-links">
+      <a href="work.html">Case studies</a>
+      <a href="research.html">Research</a>
+      <a href="cv.html">CV</a>
+      <a href="https://www.linkedin.com/in/benwestlund" rel="noopener">LinkedIn</a>
+    </div>
   </div>
 </footer>
-
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged image"><button type="button">Close</button><img src="" alt=""><p></p></dialog>
 <script>
-const io = new IntersectionObserver((es)=>{
-  es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-},{threshold:0.06});
-document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
-
-/* contact dropdown: hover on desktop, tap-toggle on touch */
 (function(){
-  document.querySelectorAll('.contact-wrap').forEach(function(wrap){
-    const trigger = wrap.querySelector('.contact-trigger');
-    trigger.addEventListener('click', function(e){
-      e.stopPropagation();
-      const isOpen = wrap.classList.toggle('open');
-      trigger.setAttribute('aria-expanded', isOpen);
+  var dlg=document.getElementById('lightbox');
+  if(!dlg||!dlg.showModal)return;
+  var img=dlg.querySelector('img'),cap=dlg.querySelector('p');
+  document.querySelectorAll('.shot').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.querySelector('img');
+      img.src=i.currentSrc||i.src;img.alt=i.alt;
+      var fc=b.closest('figure')&&b.closest('figure').querySelector('figcaption');
+      cap.textContent=fc?fc.textContent:'';
+      dlg.showModal();
     });
   });
-  document.addEventListener('click', function(){
-    document.querySelectorAll('.contact-wrap.open').forEach(function(w){
-      w.classList.remove('open');
-      w.querySelector('.contact-trigger').setAttribute('aria-expanded','false');
-    });
-  });
+  dlg.addEventListener('click',function(e){if(e.target===dlg||e.target.tagName==='BUTTON')dlg.close();});
 })();
 </script>
 </body>
