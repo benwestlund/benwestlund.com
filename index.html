@@ -156,6 +156,13 @@ dialog.lightbox button{position:fixed;top:1rem;right:1rem;font:600 .9rem var(--s
 .methods th{text-align:left;font-size:.74rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);padding:0 1rem .7rem 0;border-bottom:1px solid var(--ink);}
 .methods td{padding:1rem 1rem 1rem 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2);}
 .methods td:first-child{font-weight:600;color:var(--ink);width:42%;}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;}
+.chip{display:inline-flex;align-items:baseline;gap:.45rem;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:.4rem .7rem;text-decoration:none;color:var(--ink);font-size:.88rem;line-height:1.35;transition:border-color .15s;}
+.chip:hover{border-color:var(--ink);}
+.chip .cn{font-weight:600;}
+.chip .cd{color:var(--muted);}
+.chip::after{content:"\2192";color:var(--accent);font-size:.85rem;}
+.methods td{vertical-align:middle;}
 .tools{margin-top:1.4rem;font-size:.95rem;color:var(--muted);}
 
 .now{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
@@ -277,15 +284,13 @@ dialog.lightbox button{position:fixed;top:1rem;right:1rem;font:600 .9rem var(--s
     <table class="methods">
       <thead><tr><th scope="col">Method</th><th scope="col">Where</th></tr></thead>
       <tbody>
-        <tr><td>Semi-structured interviews</td><td><a href="work.html#xai-discharge">Explainable AI for Discharge Planning</a> (nurses, case managers, a physician); <a href="work.html#ai-classroom">AI in the Classroom</a> (faculty and students); 52 interviews in <a href="research.html#ohio">rural Ohio</a>; 16 interviews with <a href="research.html#vietnam">providers in Vietnam</a></td></tr>
-        <tr><td>Prototyping in Figma and comparative prototype testing</td><td><a href="work.html#xai-discharge">Explainable AI for Discharge Planning</a></td></tr>
-        <tr><td>Listening sessions and card sorting</td><td><a href="work.html#table">TABLE</a></td></tr>
-        <tr><td>Empathy mapping and insight statements</td><td><a href="work.html#table">TABLE</a></td></tr>
-        <tr><td>Co-ideation workshops and value/effort prioritization</td><td><a href="work.html#table">TABLE</a></td></tr>
-        <tr><td>Surveys, usability metrics (SUS, NASA-TLX), and statistical analysis</td><td><a href="work.html#xai-discharge">Explainable AI for Discharge Planning</a>; quantitative analysis of the <a href="research.html#scoping">scoping review</a> data in R; survey instruments and mixed-methods integration in my <a href="cv.html">research assistantships</a></td></tr>
-        <tr><td>Codebooks, thematic and framework analysis, multi-coder analysis</td><td><a href="research.html#ohio">Rural Ohio</a> and <a href="research.html#vietnam">Vietnam</a> studies</td></tr>
-        <tr><td>Facilitated expert debate and decision frameworks</td><td><a href="research.html#tracking">Implementation strategy tracking</a></td></tr>
-        <tr><td>Concept design and conversational copy</td><td><a href="work.html#echocare">EchoCare</a></td></tr>
+        <tr><td>Semi-structured interviews</td><td><div class="chips"><a class="chip" href="work.html#xai-discharge"><span class="cn">Explainable AI</span><span class="cd">nurses, case managers, a physician</span></a><a class="chip" href="work.html#ai-classroom"><span class="cn">AI in the Classroom</span><span class="cd">faculty and students</span></a><a class="chip" href="research.html#ohio"><span class="cn">Rural Ohio</span><span class="cd">52 interviews</span></a><a class="chip" href="research.html#vietnam"><span class="cn">Vietnam</span><span class="cd">16 providers</span></a></div></td></tr>
+        <tr><td>Prototyping in Figma and comparative prototype testing</td><td><div class="chips"><a class="chip" href="work.html#xai-discharge"><span class="cn">Explainable AI</span><span class="cd">two interface versions</span></a></div></td></tr>
+        <tr><td>Surveys, usability metrics (SUS, NASA-TLX), and statistical analysis</td><td><div class="chips"><a class="chip" href="work.html#xai-discharge"><span class="cn">Explainable AI</span><span class="cd">SUS, NASA-TLX</span></a><a class="chip" href="research.html#scoping"><span class="cn">Scoping review</span><span class="cd">analysis in R</span></a><a class="chip" href="cv.html"><span class="cn">Research assistantships</span><span class="cd">survey instruments</span></a></div></td></tr>
+        <tr><td>Listening sessions, card sorting, empathy mapping, co-ideation, and value/effort prioritization</td><td><div class="chips"><a class="chip" href="work.html#table"><span class="cn">A Seat at TABLE</span><span class="cd">four sessions with families and staff</span></a></div></td></tr>
+        <tr><td>Codebooks, thematic and framework analysis, multi-coder analysis</td><td><div class="chips"><a class="chip" href="research.html#ohio"><span class="cn">Rural Ohio</span></a><a class="chip" href="research.html#vietnam"><span class="cn">Vietnam</span></a></div></td></tr>
+        <tr><td>Facilitated expert debate and decision frameworks</td><td><div class="chips"><a class="chip" href="research.html#tracking"><span class="cn">Strategy tracking</span><span class="cd">SIRC 2026</span></a></div></td></tr>
+        <tr><td>Concept design and conversational copy</td><td><div class="chips"><a class="chip" href="work.html#echocare"><span class="cn">EchoCare</span></a></div></td></tr>
       </tbody>
     </table>
     <p class="tools">Tools: Miro, NVivo, Dedoose, Figma, Qualtrics, R, Stata, SPSS, Python, JavaScript</p>
