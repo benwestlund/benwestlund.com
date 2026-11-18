@@ -126,7 +126,7 @@ dialog.lightbox button{position:fixed;top:1rem;right:1rem;font:600 .9rem var(--s
   .code[data-code]::before{position:static;display:inline;margin:0 .35em 0 0;font-size:.55rem;vertical-align:.45em;}
 }
 
-.jump{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;padding-bottom:3.5rem;}
+.jump{display:grid;grid-template-columns:repeat(5,1fr);gap:.9rem;padding-bottom:3.5rem;}
 .jump a{display:flex;flex-direction:column;gap:.35rem;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:1rem 1.1rem 1.05rem;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s;}
 .jump a:hover{border-color:var(--ink);transform:translateY(-1px);}
 .jump .jl{font-size:.7rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);}
@@ -207,15 +207,80 @@ ol.risks li{color:var(--ink-2);margin-bottom:.5rem;}
 <header class="page-head">
   <span class="kicker">Case studies</span>
   <h1>Research that shapes what gets built</h1>
-  <p class="lede">Most of my work happens early in a project, before a team knows exactly what the problem is: finding the right people, talking with them, and turning what they say into decisions. Three projects below, one still in progress.</p>
+  <p class="lede">Most of my work happens early in a project, before a team knows exactly what the problem is: finding the right people, talking with them, and turning what they say into decisions. Four projects below, two still in progress.</p>
 </header>
 
 <nav class="jump" aria-label="Case studies on this page">
+  <a href="#xai-discharge"><span class="jl">Human factors</span><span class="jt">Explainable AI</span></a>
   <a href="#table"><span class="jl">Generative research</span><span class="jt">A Seat at TABLE</span></a>
   <a href="#ai-classroom"><span class="jl">In progress</span><span class="jt">AI in the Classroom</span></a>
   <a href="#echocare"><span class="jl">Design concept</span><span class="jt">EchoCare</span></a>
   <a href="#more"><span class="jl">Academic studies</span><span class="jt">More research</span></a>
 </nav>
+
+<!-- ============ XAI DISCHARGE ============ -->
+<article class="case" id="xai-discharge">
+  <div class="case-head">
+    <div>
+      <span class="kicker">Case study · Human factors · In progress</span>
+      <h2>Explainable AI for Discharge Planning</h2>
+      <p class="lede">AI models can flag which hospital patients are at high risk of being readmitted, but clinicians won't act on a recommendation they can't interrogate. Our team designed an interface that explains the reasoning behind an AI readmission score and turns it into suggested discharge actions, and we're testing it with the clinicians who plan discharges.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>My role</dt><dd>Led prototyping in Figma, co-developed the interview guide, conduct interviews, lead the qualitative analysis</dd></div>
+      <div><dt>Team</dt><dd>Team project with Shelby Wray, CHIP 711 (Carolina Health Informatics Program), UNC</dd></div>
+      <div><dt>Methods</dt><dd>Prototype comparison in simulated discharge cases, semi-structured interviews, thematic analysis</dd></div>
+      <div><dt>Participants so far</dt><dd>Nurses, case managers, and a physician</dd></div>
+      <div><dt>Status</dt><dd>Interviews underway</dd></div>
+    </dl>
+  </div>
+
+  <div class="block prose">
+    <span class="kicker">The problem</span>
+    <h3>A risk score without a reason</h3>
+    <p>Hospitals lose up to 3% of their Medicare inpatient payments when too many patients are readmitted within 30 days. Many health systems now use machine learning models to predict who is at risk, but most return a number without saying why. That leaves case managers digging through the chart to find the reason, and it pushes them toward one of two failure modes: ignoring alerts they don't trust, or accepting them without checking.</p>
+  </div>
+
+  <div class="block prose">
+    <span class="kicker">The prototype</span>
+    <h3>Two versions of the same discharge screen</h3>
+    <p>I built both versions in Figma around the same synthetic patient: a 72-year-old admitted for heart failure, with four medication changes, no follow-up appointments, and no way to get to them. Both show the readmission score and the factors driving it. They differ in how the clinician gets from that explanation to a discharge plan.</p>
+    <div class="fig-pair">
+      <figure>
+  <button class="shot" type="button" aria-label="Enlarge image: Condition A discharge screen: patient summary, a 78% readmission risk score with its top three contributing factors, and a blank free-text care plan box"><img src="xai_condition_a.png" alt="Condition A discharge screen: patient summary, a 78% readmission risk score with its top three contributing factors, and a blank free-text care plan box" width="1612" height="1134" loading="lazy"><span class="enlarge" aria-hidden="true">Enlarge</span></button>
+  <figcaption>Condition A. The clinician sees the score and the factors behind it, then writes the discharge plan in a free-text box.</figcaption>
+</figure>
+      <figure>
+  <button class="shot" type="button" aria-label="Enlarge image: Condition B discharge screen: the same patient and risk explanation, with a care plan checklist of suggested actions, each tagged with the risk factor it addresses"><img src="xai_condition_b.png" alt="Condition B discharge screen: the same patient and risk explanation, with a care plan checklist of suggested actions, each tagged with the risk factor it addresses" width="1610" height="1132" loading="lazy"><span class="enlarge" aria-hidden="true">Enlarge</span></button>
+  <figcaption>Condition B. The same explanation becomes a checklist of suggested actions. Each one is tagged with the risk factor it addresses, and the clinician reviews them before finalizing.</figcaption>
+</figure>
+    </div>
+  </div>
+
+  <div class="block prose">
+    <span class="kicker">Design decisions</span>
+    <h3>Making the explanation something you can act on</h3>
+    <ul>
+      <li><b>The numbers reconcile.</b> The baseline risk for similar patients (18%) plus the three factors (+28, +19, +13) adds up to the 78% score, so the explanation accounts for the whole number.</li>
+      <li><b>Every suggestion names its reason.</b> Each suggested action carries a tag for the risk factor it addresses (no follow-up, medication complexity, transport barrier), so a clinician can check the logic at a glance.</li>
+      <li><b>The clinician stays in charge.</b> Actions that no factor points to, like a home health referral or heart failure teach-back, are listed but left for the clinician to choose, and nothing is final until they review the plan.</li>
+      <li><b>Synthetic data only.</b> The patient, chart, and model output are invented; no real health information is used.</li>
+    </ul>
+    <p>Pre-selecting the AI's suggestions saves time, but it also invites automation bias: finalizing a plan without really reviewing it. That tension is part of what the study is designed to surface, and the interviews ask directly about trust, transparency, and alert fatigue.</p>
+  </div>
+
+  <div class="block prose">
+    <span class="kicker">The research</span>
+    <h3>How we're evaluating it</h3>
+    <p>Participants work through simulated discharge planning cases on the prototype, then sit for a semi-structured interview about how they decided what to do and how much they trusted the tool. The study design also compares task time, workload (NASA-TLX), and usability (SUS) across the two versions. It's framed with SEIPS 2.0, a human factors model that treats the person, task, technology, environment, and organization as one work system.</p>
+    <p>I co-developed the interview guide, I'm conducting the interviews (so far with nurses, case managers, and a physician), and I'm leading the qualitative analysis.</p>
+  </div>
+
+  <div class="note">
+    <h3>Coming to this page</h3>
+    <p>When interviews and analysis are done, I'll add who took part, what we learned about trust and workload, and the design changes that came out of it.</p>
+  </div>
+</article>
 
 <!-- ============ TABLE ============ -->
 <article class="case" id="table">

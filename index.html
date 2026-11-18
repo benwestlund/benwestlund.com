@@ -135,12 +135,13 @@ dialog.lightbox button{position:fixed;top:1rem;right:1rem;font:600 .9rem var(--s
 .hero-photo figcaption{margin-top:.6rem;}
 .avail{font-size:.92rem;color:var(--muted);margin-top:1.3rem;}
 
-.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.4rem;}
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.4rem;}
 .case-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .15s;}
 .case-card:hover{border-color:var(--ink);}
 .case-card:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;}
-.case-card .thumb{aspect-ratio:16/10;object-fit:cover;object-position:top left;width:100%;border-bottom:1px solid var(--line);}
-.case-card .thumb-text{aspect-ratio:16/10;border-bottom:1px solid var(--line);background:#F3EFE6;display:flex;flex-direction:column;justify-content:center;padding:1.4rem 1.5rem;gap:.9rem;}
+.case-card .thumb{aspect-ratio:16/9;object-fit:cover;object-position:top left;width:100%;border-bottom:1px solid var(--line);}
+.case-card .thumb-right{object-position:right top;}
+.case-card .thumb-text{aspect-ratio:16/9;border-bottom:1px solid var(--line);background:#F3EFE6;display:flex;flex-direction:column;justify-content:center;padding:1.4rem 1.5rem;gap:.9rem;}
 .thumb-text .q{font-family:var(--serif);font-size:1.15rem;line-height:1.35;color:var(--ink);}
 .thumb-text .groups{display:flex;gap:.5rem;flex-wrap:wrap;}
 .thumb-text .groups span{font-size:.75rem;font-weight:600;border:1px solid var(--ink-2);border-radius:2px;padding:.2rem .5rem;color:var(--ink-2);}
@@ -216,6 +217,15 @@ dialog.lightbox button{position:fixed;top:1rem;right:1rem;font:600 .9rem var(--s
     <span class="kicker">Selected work</span>
     <h2 id="work-h">Case studies</h2>
     <div class="cases">
+      <a class="case-card" href="work.html#xai-discharge">
+        <img class="thumb thumb-right" src="xai_condition_b.png" alt="" width="1610" height="1132" loading="lazy">
+        <div class="body">
+          <span class="meta">Human factors · Team project · In progress</span>
+          <h3>Explainable AI for Discharge Planning</h3>
+          <p>A discharge planning screen that explains an AI readmission score and links each risk factor to a suggested action. I led the Figma prototyping and I'm interviewing the clinicians who plan discharges.</p>
+          <span class="more">Read the case study</span>
+        </div>
+      </a>
       <a class="case-card" href="work.html#table">
         <img class="thumb" src="table_empathy.jpg" alt="" width="2400" height="1350" loading="lazy">
         <div class="body">
@@ -270,7 +280,8 @@ dialog.lightbox button{position:fixed;top:1rem;right:1rem;font:600 .9rem var(--s
     <table class="methods">
       <thead><tr><th scope="col">Method</th><th scope="col">Where</th></tr></thead>
       <tbody>
-        <tr><td>Semi-structured interviews</td><td><a href="work.html#ai-classroom">AI in the Classroom</a> (faculty and students); 52 interviews in <a href="research.html#ohio">rural Ohio</a>; 16 interviews with <a href="research.html#vietnam">providers in Vietnam</a></td></tr>
+        <tr><td>Semi-structured interviews</td><td><a href="work.html#xai-discharge">Explainable AI for Discharge Planning</a> (nurses, case managers, a physician); <a href="work.html#ai-classroom">AI in the Classroom</a> (faculty and students); 52 interviews in <a href="research.html#ohio">rural Ohio</a>; 16 interviews with <a href="research.html#vietnam">providers in Vietnam</a></td></tr>
+        <tr><td>Prototyping in Figma and comparative prototype testing</td><td><a href="work.html#xai-discharge">Explainable AI for Discharge Planning</a></td></tr>
         <tr><td>Listening sessions and card sorting</td><td><a href="work.html#table">TABLE</a></td></tr>
         <tr><td>Empathy mapping and insight statements</td><td><a href="work.html#table">TABLE</a></td></tr>
         <tr><td>Co-ideation workshops and value/effort prioritization</td><td><a href="work.html#table">TABLE</a></td></tr>
@@ -291,6 +302,7 @@ dialog.lightbox button{position:fixed;top:1rem;right:1rem;font:600 .9rem var(--s
     </div>
     <div>
       <ul>
+        <li>Interviewing clinicians about an explainable AI discharge planning tool</li>
         <li>Interviewing faculty and students for UNC's AI Fellows program</li>
         <li>Drafting a scoping review on human-centered design and implementation science</li>
         <li>Preparing an invited talk for the Global Health Implementation Science Symposium at Seoul National University (January 2027)</li>
