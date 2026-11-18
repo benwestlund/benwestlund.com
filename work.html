@@ -126,7 +126,12 @@ dialog.lightbox button{position:fixed;top:1rem;right:1rem;font:600 .9rem var(--s
   .code[data-code]::before{position:static;display:inline;margin:0 .35em 0 0;font-size:.55rem;vertical-align:.45em;}
 }
 
-.jump{display:flex;gap:.6rem 1.6rem;flex-wrap:wrap;padding-bottom:3rem;font-size:.95rem;}
+.jump{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;padding-bottom:3.5rem;}
+.jump a{display:flex;flex-direction:column;gap:.35rem;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:1rem 1.1rem 1.05rem;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s;}
+.jump a:hover{border-color:var(--ink);transform:translateY(-1px);}
+.jump .jl{font-size:.7rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);}
+.jump .jt{font-family:var(--serif);font-size:1.12rem;line-height:1.25;display:flex;justify-content:space-between;gap:.6rem;align-items:baseline;}
+.jump .jt::after{content:"\2193";font-family:var(--sans);font-size:.9rem;color:var(--accent);}
 .case{padding:5rem 0;border-top:1px solid var(--ink);}
 .case-head{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;margin-bottom:3rem;}
 .case-head h2{font-size:clamp(2.1rem,4vw,3rem);margin-bottom:1rem;}
@@ -177,6 +182,7 @@ ol.risks li{color:var(--ink-2);margin-bottom:.5rem;}
   .tldr{padding:1.4rem 1.3rem;}
   .tldr dl{grid-template-columns:1fr;gap:.2rem;}
   .tldr dd{margin-bottom:.8rem;}
+  .jump{grid-template-columns:1fr 1fr;padding-bottom:2.5rem;}
   .insights,.concepts,.more-research{grid-template-columns:1fr;}
   .reflect{grid-template-columns:1fr;gap:.8rem;}
   .brief q{font-size:1.2rem;}
@@ -205,10 +211,10 @@ ol.risks li{color:var(--ink-2);margin-bottom:.5rem;}
 </header>
 
 <nav class="jump" aria-label="Case studies on this page">
-  <a href="#table">A Seat at TABLE</a>
-  <a href="#ai-classroom">AI in the Classroom (in progress)</a>
-  <a href="#echocare">EchoCare (design concept)</a>
-  <a href="#more">Research beyond these projects</a>
+  <a href="#table"><span class="jl">Generative research</span><span class="jt">A Seat at TABLE</span></a>
+  <a href="#ai-classroom"><span class="jl">In progress</span><span class="jt">AI in the Classroom</span></a>
+  <a href="#echocare"><span class="jl">Design concept</span><span class="jt">EchoCare</span></a>
+  <a href="#more"><span class="jl">Academic studies</span><span class="jt">More research</span></a>
 </nav>
 
 <!-- ============ TABLE ============ -->
