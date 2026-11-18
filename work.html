@@ -171,6 +171,7 @@ ol.risks li{color:var(--ink-2);margin-bottom:.5rem;}
 .note h3{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;}
 .note p{max-width:720px;}
 .note p+p{margin-top:.8rem;}
+figure:has(img[src="steady_quickhide.jpg"]){max-width:620px;}
 .more-research{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:2rem 0 1.5rem;}
 .more-research article{border-top:2px solid var(--ink);padding-top:1rem;}
 .more-research h3{font-size:1.2rem;margin-bottom:.6rem;}
@@ -207,7 +208,7 @@ ol.risks li{color:var(--ink-2);margin-bottom:.5rem;}
 <header class="page-head">
   <span class="kicker">Case studies</span>
   <h1>Research that shapes what gets built</h1>
-  <p class="lede">Most of my work happens early in a project, before a team knows exactly what the problem is: finding the right people, talking with them, and turning what they say into decisions. Four projects below, two still in progress.</p>
+  <p class="lede">Most of my work happens early in a project, before a team knows exactly what the problem is: finding the right people, talking with them, and turning what they say into decisions. Four projects below, two still in progress, plus a smaller course prototype.</p>
 </header>
 
 <nav class="jump" aria-label="Case studies on this page">
@@ -527,6 +528,58 @@ ol.risks li{color:var(--ink-2);margin-bottom:.5rem;}
     </ul>
     <p><a href="https://benwestlund.github.io/EchoCare-Prototype/" rel="noopener">View the live prototype</a></p>
   </div>
+</article>
+
+<!-- ============ STEADY ============ -->
+<article class="case" id="steady">
+  <div class="case-head">
+    <div>
+      <span class="kicker">Other project · Course prototype</span>
+      <h2>Steady</h2>
+      <p class="lede">A web prototype that helps people take PrEP (to prevent HIV) or ART (to treat it) every day, designed around the stigma and privacy concerns that lead people to abandon reminder apps or skip doses. Built for a UNC course by a team of three PhD students.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>My role</dt><dd>Project lead and primary coder</dd></div>
+      <div><dt>Team</dt><dd>Three PhD students, CHIP 741, UNC, Fall 2026</dd></div>
+      <div><dt>Built with</dt><dd>HTML, CSS, and JavaScript, with AI-assisted coding (permitted in the course)</dd></div>
+      <div><dt>Status</dt><dd>Course prototype, not tested with users</dd></div>
+    </dl>
+  </div>
+
+  <div class="block prose">
+    <span class="kicker">The problem</span>
+    <h3>A reminder can be a disclosure</h3>
+    <p>Daily HIV medication only works if people take it consistently. Generic pill reminders ignore a barrier specific to HIV: a lock-screen notification reading "Take your HIV meds," or an app icon a roommate recognizes, can be enough for someone to stop using the tool. Alcohol and substance use also disrupt routines, and people who use substances often meet judgment instead of support.</p>
+    <figure>
+  <button class="shot" type="button" aria-label="Enlarge image: Steady Today screen with a dose streak and daily check-in, next to the same phone showing only a neutral clock after Quick hide"><img src="steady_quickhide.jpg" alt="Steady Today screen with a dose streak and daily check-in, next to the same phone showing only a neutral clock after Quick hide" width="1308" height="1335" loading="lazy"><span class="enlarge" aria-hidden="true">Enlarge</span></button>
+  <figcaption>The Today screen, and the same phone one tap later. Quick hide replaces everything with a plain clock.</figcaption>
+</figure>
+  </div>
+
+  <div class="block prose">
+    <span class="kicker">Design decisions</span>
+    <h3>Privacy first, then features</h3>
+    <ul>
+      <li><b>Nothing on the lock screen gives it away.</b> The app is called Steady, and reminders use wording the user writes, like "Daily routine time," so a notification or icon doesn't reveal a diagnosis or PrEP use.</li>
+      <li><b>Quick hide.</b> One tap (or the Esc key) covers the screen with a neutral clock and renames the browser tab.</li>
+      <li><b>Data stays on the device.</b> Everything is stored in the browser, and nothing leaves the device unless the AI coach is connected.</li>
+      <li><b>Provider sharing is off by default.</b> A care team view shows adherence, how often the person responds to check-ins, and flags such as heavy drinking followed by a missed dose, but only if the user turns sharing on.</li>
+      <li><b>Harm reduction framing.</b> The alcohol content and coach guidance give practical information without moralizing.</li>
+      <li><b>A safer path for the AI coach.</b> The coach is set up to run through a small Python proxy so the API key never sits in the front-end code, with instructions that keep it from diagnosing or changing doses and point to 911 and the 988 Lifeline in a crisis.</li>
+    </ul>
+    <figure>
+  <button class="shot" type="button" aria-label="Enlarge image: Three Steady screens: a monthly adherence calendar, education cards filtered for PrEP, and a simulated care team dashboard with adherence figures and a follow-up flag"><img src="steady_screens.jpg" alt="Three Steady screens: a monthly adherence calendar, education cards filtered for PrEP, and a simulated care team dashboard with adherence figures and a follow-up flag" width="1932" height="1335" loading="lazy"><span class="enlarge" aria-hidden="true">Enlarge</span></button>
+  <figcaption>History with 7- and 30-day adherence, education cards filtered by track, and the simulated care team view. Screens show the built-in sample data.</figcaption>
+</figure>
+  </div>
+
+  <div class="note">
+    <h3>Limitations</h3>
+    <p>It hasn't been tested with real users. Reminders only fire while the page is open (a downloadable calendar event is the workaround), so a real version would need push notifications. The coach uses prewritten answers in the demo, and the care team view is simulated with no backend.</p>
+    <p>The next step would be usability testing with PrEP and ART users, focused on whether the privacy features actually lower their sense of disclosure risk.</p>
+  </div>
+
+  <p class="prose"><a href="https://benwestlund.github.io/CHIP741App/" rel="noopener">Try the prototype</a> · <a href="https://github.com/benwestlund/CHIP741App" rel="noopener">View the code</a></p>
 </article>
 
 <!-- ============ MORE RESEARCH ============ -->
